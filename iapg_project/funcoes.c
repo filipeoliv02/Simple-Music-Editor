@@ -40,6 +40,7 @@ int menu() {
         switch (op) {
             case '1':
                 printf("\nmenu 1\n");
+                printf("ffsddf444s");
                 lista_todas_musicas();
                 break;
             case '2':
