@@ -14,9 +14,7 @@ struct artista {
 
 
 
-struct artista vec_artistas[50];    // inicializa-se com a estrutura criada acima um vector de musicas
-int num_artistas = 0;            // numero de musicas no vector
-char ficheiro_musicas[] = "musicas.txt";
+
 
 
 
@@ -44,8 +42,7 @@ int menu_artist() {
                 break;
             case '2':
                 printf("\n Insira Nome Artista \n");
-                artist_search(&vec_artistas[num_artistas]);
-                num_artistas++; // aumenta o numero de artistas no vector
+
                 break;
             case '3':
                 printf("\n Insira Nome Artista \n");
@@ -83,13 +80,12 @@ int menu_artist() {
 
     return 0;
 
-
+}
     void artist_list() {
-        for (int i = 0; i < num_artistas; i++) {
-            imprime_musica(&vec_musicas[i]);
+
 
         }
-    }
+
 
         void artist_search(){
 
@@ -132,4 +128,3 @@ int menu_artist() {
 
 
 
-}
