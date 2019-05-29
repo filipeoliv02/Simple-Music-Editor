@@ -1,6 +1,8 @@
 #include "menu_pr.h"
 #include <stdio.h>
 #include "funcoes.h"
+#include "menu_music.h"
+#include "menu_artist.h"
 
 
 
@@ -13,6 +15,7 @@ int menu_pr() {
         printf(" [1] Listar Informacao \n");
         printf(" [2] Musicas \n");
         printf(" [3] Artistas \n");
+        printf(" [4] Carregar informacao do ficheiro\n");
         printf(" [s] Sair\n");
         fflush(stdin);
         scanf("%c", &opcao);
@@ -24,11 +27,17 @@ int menu_pr() {
             case '2':
                 printf("\n Musicas \n");
 
+
+
                 break;
             case '3':
                 printf("\n Artistas\n");
+                menu_artist();
 
                 break;
+            case '4':
+                printf("\n Ficheiro carregado com sucesso \n");
+                carregar_musicas_do_ficheiro();
 
 
 
