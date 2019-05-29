@@ -1,7 +1,0 @@
-
-#ifndef IAPG_PROJECT_MENU_REMOVE_H
-#define IAPG_PROJECT_MENU_REMOVE_H
-
-int menu_remove();
-
-#endif //IAPG_PROJECT_MENU_REMOVE_H
