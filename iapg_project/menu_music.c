@@ -10,6 +10,7 @@
 // estruturas permitem definir novos tipos de dados - tipo de dados neste caso ira ter o nome musica - e composto por duas strings, titulo e artista
 struct musica {
     char titulo[TAM_NOME];
+    char artista[TAM_NOME];
 };
 
 struct musica vec_musicas[TAM_VECTOR];    // inicializa-se com a estrutura criada acima um vector de musicas
@@ -28,14 +29,15 @@ int menu_music() {
         printf(" [3]Adicionar Musica \n");
         printf(" [4]Editar Musica \n");
         printf(" [5]Remover Musica \n");
-        printf(" [6]Gravar no ficheiro\n");
+        printf(" [6]Carregar o ficheiro\n");
+        printf(" [7]Gravar no ficheiro\n");
         printf(" [S]Sair \n");
         fflush(stdin);
         scanf("%c", &op);
         switch (op) {
             case '1':
                 printf("\n Musicas \n");
-                music_all_list();
+                music_list();
 
                 break;
             case '2':
@@ -56,6 +58,10 @@ int menu_music() {
                 music_remove();
                 break;
             case '6':
+                music_load();
+                printf("\n Ficheiro Carregado com Sucesso \n");
+                break;
+            case '7':
 
                 gravar_musicas_para_ficheiro();
                 printf("\n Ficheiro Gravado com Sucesso \n");
@@ -76,7 +82,7 @@ int menu_music() {
     return 0;
 }
 
-void music_list(struct musica *m){
+void music_print(struct musica *m){
     printf("%s\n", m->titulo);
 }
 
@@ -98,9 +104,9 @@ void music_remove(){
 
 
 
-void music_all_list() {
+void music_list() {
     for (int i = 0; i < music_num; i++) {
-        imprime_musica(&vec_musicas[i]);
+        music_print(&vec_musicas[i]);
     }
 }
 
@@ -117,7 +123,9 @@ void music_load() {
             fgets(linha, sizeof(linha), fp);            // titulo
             linha[strlen(linha) - 1] = 0;                // retira quebra de linha
             strcpy(vec_musicas[i].titulo, &linha[8]);        // titulo começa no 8º char
-
+            fgets(linha, sizeof(linha), fp);            // artista
+            linha[strlen(linha) - 1] = 0;                // retira quebra de linha
+            strcpy(vec_musicas[i].artista, &linha[9]);        // artista começa no 9º char
         }
         fclose(fp);
     }

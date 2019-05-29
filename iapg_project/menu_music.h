@@ -6,6 +6,6 @@ void music_search();
 void music_add();
 void music_edit();
 void music_remove();
-void music_all_list();
+void music_print();
 void music_load();
 #endif
