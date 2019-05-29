@@ -18,24 +18,24 @@ int menu_music() {
         switch (op) {
             case '1':
                 printf("\n Musicas \n");
-                lista_todas_musicas();
+                music_list();
                 break;
             case '2':
                 printf("\n Insira o nome da Musica \n");
-
+                music_search();
 
                 break;
             case '3':
                 printf("\n Insira o nome da Musica \n");
-
+                music_add();
                 break;
             case '4':
                 printf("\n Insira o nome da Musica \n");
-
+                music_edit();
                 break;
             case '5':
                 printf("\n Insira o nome da Musica \n");
-
+                music_remove();
                 break;
             case 's':
             case 'S':
@@ -51,3 +51,25 @@ int menu_music() {
     } while (op != 's' && op != 'S');
 
     return 0;
+}
+
+void music_list(){
+
+}
+
+void music_search(){
+
+}
+
+void music_add(){
+
+}
+
+void music_edit(){
+
+}
+
+void music_remove(){
+
+}
+
