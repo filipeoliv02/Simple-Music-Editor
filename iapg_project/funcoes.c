@@ -81,7 +81,7 @@ void imprime_musica (struct musica *m) {
     /*
     * POR FAZER - esta funcao deve imprimir a musica contida na estrutura - titulo + artista
     */
-    printf("%s - %s\n", m->artista, m->titulo);
+    printf("%s - %s \n", m->artista, m->titulo);
 }
 
 void le_input(char *temp) {

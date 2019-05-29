@@ -34,6 +34,7 @@ int menu_music() {
             case '1':
                 printf("\n Musicas \n");
                 music_list();
+
                 break;
             case '2':
                 printf("\n Insira o nome da Musica \n");
