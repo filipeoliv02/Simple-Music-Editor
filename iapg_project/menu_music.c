@@ -3,6 +3,21 @@
 #include "funcoes.h"
 #include <stdio.h>
 
+#define TAM_NOME 50        // tamanho max de char na string - MACRO
+#define TAM_VECTOR 50
+
+struct musica {
+    char musica[50];
+};
+
+
+
+
+
+struct musica vec_musicas[50];    // inicializa-se com a estrutura criada acima um vector de musicas
+int num_musicas = 0;            // numero de musicas no vector
+char ficheiro_musicas[] = "musicas.txt";
+
 int menu_music() {
     char op;
     do {
