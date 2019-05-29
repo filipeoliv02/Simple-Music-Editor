@@ -1,5 +1,0 @@
-musicas: 2
-titulo: Where the Streets Have No Name
-artista: U2
-titulo: Porto Sentido
-artista: Rui Veloso

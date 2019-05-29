@@ -89,10 +89,12 @@ void le_input(char *temp) {
     /*
     * POR FAZER - esta funcao deve ler uma string escrita pelo utilizador no terminal, e guarda-la em temp
     */
+    scanf("%s", input);
+    strcpy(temp,input);
 }
 
 void lista_todas_musicas() {
-    for(int i = 0; i < num_musicas; i++) {
+    for (int i = 0; i < num_musicas; i++) {
         imprime_musica(&vec_musicas[i]);
     }
 }
@@ -103,6 +105,7 @@ void ler_nova_musica(struct musica *m) {
     printf("Insira o titulo da musica:\n");
 
     le_input(m->titulo);
+
     printf("Insira o artista:\n");
 
     le_input(m->artista);
