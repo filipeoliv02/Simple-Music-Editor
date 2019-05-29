@@ -14,7 +14,6 @@ int menu_remove() {
         printf(" [1] Remover Musica \n");
         printf(" [2] Remover Artista \n");
         printf(" [3] Voltar o Menu Principal \n");
-        printf(" [s] Sair\n");
         fflush(stdin);
         scanf("%c", &opcao);
         switch (opcao) {
@@ -27,23 +26,15 @@ int menu_remove() {
 
                 break;
             case '3':
-
-
-                break;
-
-
-            case 's':
-            case 'S':
                 break;
             default:
                 //system("cls"); // clear screen - cls windows or clear for linux/unix
                 printf(" Opcao invalida!!! \n");
         }
-        if (opcao != 's' && opcao != 'S') {
-            printf("\n\nprima qualquer tecla para voltar ao menu...");
+        if (opcao != '3') {
             getchar();
         }
-    } while (opcao != 's' && opcao != 'S');
+    } while (opcao != '3');
 
     return 0;
 }

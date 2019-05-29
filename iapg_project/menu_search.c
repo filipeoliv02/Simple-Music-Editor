@@ -10,7 +10,6 @@ int menu_search() {
         printf(" [2] Procurar Artista \n");
         printf(" [3] Procurar Ano \n");
         printf(" [4] Voltar ao menu Principal \n");
-        printf(" [s] Sair\n");
         fflush(stdin);
         scanf("%c", &opcao);
         switch (opcao) {
@@ -28,21 +27,15 @@ int menu_search() {
 
                 break;
             case '4':
-
-                break;
-
-            case 's':
-            case 'S':
                 break;
             default:
                 //system("cls"); // clear screen - cls windows or clear for linux/unix
                 printf(" Opcao invalida!!! \n");
         }
-        if (opcao != 's' && opcao != 'S') {
-            printf("\n\n Prima qualquer tecla para voltar ao menu...");
+        if (opcao != '4') {
             getchar();
         }
-    } while (opcao != 's' && opcao != 'S');
+    } while (opcao != '4');
 
     return 0;
 }
