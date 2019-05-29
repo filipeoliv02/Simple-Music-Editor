@@ -45,20 +45,20 @@ int menu() {
         scanf("%c", &op);
         switch (op) {
             case '1':
-                printf("\n Musicas \n");
+                printf("\nMusicas \n");
                 lista_todas_musicas();
                 break;
             case '2':
-                printf("\nmenu 2\n");
+                printf("\nInsira Nova Musica\n");
                 ler_nova_musica(&vec_musicas[num_musicas]);
                 num_musicas++; // aumenta o numero de musicas no vector
                 break;
             case '3':
-                printf("\nmenu 3\n");
+                printf("\nGravar musicas para ficheiro\n");
                 gravar_musicas_para_ficheiro();
                 break;
             case '4':
-                printf("\nmenu 4\n");
+                printf("\nCarregar musicas do ficheiro para a memoria\n");
                 carregar_musicas_do_ficheiro();
                 break;
             case 's':
