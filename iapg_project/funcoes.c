@@ -100,10 +100,10 @@ void lista_todas_musicas() {
 void ler_nova_musica(struct musica *m) {
 
     getchar();
-    printf("Insira o titulo da musica:");
+    printf("Insira o titulo da musica:\n");
 
     le_input(m->titulo);
-    printf("Insira o artista:");
+    printf("Insira o artista:\n");
 
     le_input(m->artista);
 
