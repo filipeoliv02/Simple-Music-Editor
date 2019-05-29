@@ -1,17 +1,20 @@
-
+#include <string.h>
 #include "menu_music.h"
 #include "funcoes.h"
 #include <stdio.h>
 
 #define TAM_NOME 50        // tamanho max de char na string - MACRO
-#define TAM_VECTOR 50
+#define TAM_VECTOR 50    // numero de musicas que podem ser armazenadas em memoria
 
+
+// estruturas permitem definir novos tipos de dados - tipo de dados neste caso ira ter o nome musica - e composto por duas strings, titulo e artista
 struct musica {
-    char musica[50];
+    char titulo[TAM_NOME];
 };
 
-
-
+struct musica vec_musicas[TAM_VECTOR];    // inicializa-se com a estrutura criada acima um vector de musicas
+int music_num = 0;            // numero de musicas no vector
+char music_file[] = "musicas.txt";// nome do ficheiro
 
 
 
@@ -79,8 +82,8 @@ int menu_music() {
     return 0;
 }
 
-void music_list(){
-
+void music_list(struct musica *m){
+    printf("%s\n", m->titulo);
 }
 
 void music_search(){
@@ -98,4 +101,32 @@ void music_edit(){
 void music_remove(){
 
 }
+
+
+
+void music_all_list() {
+    for (int i = 0; i < music_num; i++) {
+        imprime_musica(&vec_musicas[i]);
+    }
+}
+
+
+void music_load() {
+    FILE *fp;
+    int i = 0;
+    char linha[TAM_NOME];
+    music_num = 0;
+    fp = fopen(music_file, "r");
+    if (fp != NULL) {
+        fscanf(fp, "%*s %d\n", &music_num);            // ignore the string and store only the int
+        for (i = 0; i < music_num; i++) {
+            fgets(linha, sizeof(linha), fp);            // titulo
+            linha[strlen(linha) - 1] = 0;                // retira quebra de linha
+            strcpy(vec_musicas[i].titulo, &linha[8]);        // titulo começa no 8º char
+
+        }
+        fclose(fp);
+    }
+}
+
 
