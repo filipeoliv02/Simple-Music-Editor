@@ -1,4 +1,4 @@
-musicas: 7
+musicas: 8
 titulo: Where the Streets Have No Name
 artista: U2
 titulo: Porto Sentido
@@ -13,3 +13,5 @@ titulo: Always
 artista: Bon Jovi
 titulo: Rolling in the Deep
 artista: Adele
+titulo: ola
+artista: vou

@@ -5,11 +5,14 @@ int menu_pr() {
     char opcao;
     do {
         printf("Escolha uma opcao entre as possiveis: \n");
-        printf(" [1]Listar musicas \n");
-        printf(" [2]Inserir nova musica \n");
-        printf(" [3]Gravar musicas para ficheiro \n");
-        printf(" [4]Carregar musicas do ficheiro para a memoria \n");
-        printf(" [S]Sair \n");
+        printf(" [1] Listar Informacao \n");
+        printf(" [2] Procurar \n");
+        printf(" [3] Adicionar \n");
+        printf(" [4] Editar \n");
+        printf(" [5] Remover \n");
+        printf(" [6] Carregar Informacao do ficheiro\n");
+        printf(" [7] Gravar no ficheiro\n");
+        printf(" [s] Sair\n");
         fflush(stdin);
         scanf("%c", &opcao);
         switch (opcao) {

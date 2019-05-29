@@ -69,7 +69,7 @@ int menu() {
                 printf(" Opcao invalida!!! \n");
         }
         if (op != 's' && op != 'S') {
-            printf("\n\nprima qualquer tecla para voltar ao menu...");
+            printf("\n\nPrima qualquer tecla para voltar ao menu...");
             getchar();
         }
     } while (op != 's' && op != 'S');
