@@ -8,12 +8,10 @@ int menu_pr() {
     do {
         printf("Escolha uma opcao entre as possiveis: \n");
         printf(" [1] Listar Informacao \n");
-        printf(" [2] Procurar \n");
-        printf(" [3] Adicionar \n");
-        printf(" [4] Editar \n");
-        printf(" [5] Remover \n");
-        printf(" [6] Carregar Informacao do ficheiro\n");
-        printf(" [7] Gravar no ficheiro\n");
+        printf(" [2] Musicas \n");
+        printf(" [3] Artistas \n");
+        printf(" [4] Carregar Informacao do ficheiro\n");
+        printf(" [5] Gravar no ficheiro\n");
         printf(" [s] Sair\n");
         fflush(stdin);
         scanf("%c", &opcao);
@@ -38,17 +36,7 @@ int menu_pr() {
                 printf("\n Menu Remover \n");
 
                 break;
-            case '6':
 
-                carregar_musicas_do_ficheiro();
-                printf("\n Ficheiro Carregado com Sucesso \n");
-                break;
-            case '7':
-
-                gravar_musicas_para_ficheiro();
-                printf("\n Ficheiro Gravado com Sucesso \n");
-
-                break;
 
             case 's':
             case 'S':

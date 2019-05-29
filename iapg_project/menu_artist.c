@@ -32,6 +32,8 @@ int menu_artist() {
         printf(" [3]Adicionar Artista\n");
         printf(" [4]Editar Artista \n");
         printf(" [5]Remover artista \n");
+        printf(" [6] Carregar Informacao do ficheiro\n");
+        printf(" [7] Gravar no ficheiro\n");
         printf(" [S]Sair \n");
         fflush(stdin);
         scanf("%c", &op);
@@ -55,6 +57,15 @@ int menu_artist() {
                 break;
             case '5':
                 printf("\n Insira Nome Artista \n");
+            case '6':
+
+                carregar_musicas_do_ficheiro();
+                printf("\n Ficheiro Carregado com Sucesso \n");
+                break;
+            case '7':
+
+                gravar_musicas_para_ficheiro();
+                printf("\n Ficheiro Gravado com Sucesso \n");
 
                 break;
             case 's':

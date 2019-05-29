@@ -27,6 +27,8 @@ int menu_music() {
         printf(" [3]Adicionar Musica \n");
         printf(" [4]Editar Musica \n");
         printf(" [5]Remover Musica \n");
+        printf(" [6] Carregar Informacao do ficheiro\n");
+        printf(" [7] Gravar no ficheiro\n");
         printf(" [S]Sair \n");
         fflush(stdin);
         scanf("%c", &op);
@@ -51,6 +53,16 @@ int menu_music() {
             case '5':
                 printf("\n Insira o nome da Musica \n");
                 music_remove();
+                break;
+            case '6':
+
+                carregar_musicas_do_ficheiro();
+                printf("\n Ficheiro Carregado com Sucesso \n");
+                break;
+            case '7':
+
+                gravar_musicas_para_ficheiro();
+                printf("\n Ficheiro Gravado com Sucesso \n");
                 break;
             case 's':
             case 'S':
