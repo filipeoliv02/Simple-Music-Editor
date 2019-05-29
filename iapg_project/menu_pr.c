@@ -17,7 +17,7 @@ int menu_pr() {
         scanf("%c", &opcao);
         switch (opcao) {
             case '1':
-                printf("\n Musicas \n");
+                printf("\n Todas as Informacoes \n");
 
                 break;
             case '2':
@@ -32,6 +32,7 @@ int menu_pr() {
                 printf("\n Carregar musicas do ficheiro para a memoria \n");
 
                 break;
+
             case 's':
             case 'S':
                 break;
