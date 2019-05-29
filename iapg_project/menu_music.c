@@ -25,8 +25,8 @@ int menu_music() {
         printf(" [3]Adicionar Musica \n");
         printf(" [4]Editar Musica \n");
         printf(" [5]Remover Musica \n");
-        printf(" [6] Carregar Informacao do ficheiro\n");
-        printf(" [7] Gravar no ficheiro\n");
+        printf(" [6]Carregar Informacao do ficheiro\n");
+        printf(" [7]Gravar no ficheiro\n");
         printf(" [S]Sair \n");
         fflush(stdin);
         scanf("%c", &op);
