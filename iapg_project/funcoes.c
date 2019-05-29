@@ -77,7 +77,7 @@ int menu() {
     return 0;
 }
 
-void imprime_musica(struct musica *m) {
+void imprime_musica (struct musica *m) {
     /*
     * POR FAZER - esta funcao deve imprimir a musica contida na estrutura - titulo + artista
     */
