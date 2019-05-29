@@ -35,15 +35,15 @@ int menu_artist() {
                 num_musicas++; // aumenta o numero de musicas no vector
                 break;
             case '3':
-                printf("\n Adicionar Artista \n");
+                printf("\n Insira Nome Artista \n");
                 gravar_musicas_para_ficheiro();
                 break;
             case '4':
-                printf("\n Editar Artista \n");
+                printf("\n Insira Nome Artista \n");
                 carregar_musicas_do_ficheiro();
                 break;
             case '5':
-                printf("\n Remover Artista \n");
+                printf("\n Insira Nome Artista \n");
                 carregar_musicas_do_ficheiro();
                 break;
             case 's':
@@ -69,4 +69,43 @@ int menu_artist() {
         }
     }
 
-        void
+        void artist_search(){
+
+    }
+
+    void artist_add(){
+
+    }
+
+    void artist_remove(){
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

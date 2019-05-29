@@ -4,4 +4,7 @@
 
 int menu_artist();
 void artist_list();
+void artist_search();
+void artist_add();
+void artist_remove();
 #endif //IAPG_PROJECT_MENU_ARTIST_H
