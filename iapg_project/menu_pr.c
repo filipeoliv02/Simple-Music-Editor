@@ -1,5 +1,6 @@
 #include "menu_pr.h"
 #include <stdio.h>
+#include "menu_search.h"
 
 int menu_pr() {
     char opcao;
@@ -22,7 +23,7 @@ int menu_pr() {
                 break;
             case '2':
                 printf("\n Menu Procurar \n");
-
+                menu_search();
                 break;
             case '3':
                 printf("\n Menu Adicionar \n");

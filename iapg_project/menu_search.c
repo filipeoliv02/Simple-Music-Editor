@@ -2,35 +2,32 @@
 #include "funcoes.h"
 #include <stdio.h>
 
-int menu_pr() {
+int menu_search() {
     char opcao;
     do {
         printf("Escolha uma opcao entre as possiveis: \n");
-        printf(" [1] Listar Informacao \n");
-        printf(" [2] Procurar \n");
-        printf(" [3] Adicionar \n");
-        printf(" [4] Editar \n");
-        printf(" [5] Remover \n");
-        printf(" [6] Carregar Informacao do ficheiro\n");
-        printf(" [7] Gravar no ficheiro\n");
+        printf(" [1] Procurar Musica \n");
+        printf(" [2] Procurar Artista \n");
+        printf(" [3] Procurar Ano \n");
+        printf(" [4] Voltar ao menu Principal \n");
         printf(" [s] Sair\n");
         fflush(stdin);
         scanf("%c", &opcao);
         switch (opcao) {
             case '1':
-                printf("\n Todas as Informacoes \n");
+                printf("\n Insira o nome da Musica \n");
 
                 break;
             case '2':
-                printf("\n Menu Procurar \n");
+                printf("\n Insira o nome do Artista \n");
 
                 break;
+
             case '3':
-                printf("\n Gravar musicas para ficheiro \n");
+                printf("\n Insira o Ano \n");
 
                 break;
             case '4':
-                printf("\n Carregar musicas do ficheiro para a memoria \n");
 
                 break;
 
@@ -42,7 +39,7 @@ int menu_pr() {
                 printf(" Opcao invalida!!! \n");
         }
         if (opcao != 's' && opcao != 'S') {
-            printf("\n\nprima qualquer tecla para voltar ao menu...");
+            printf("\n\n Prima qualquer tecla para voltar ao menu...");
             getchar();
         }
     } while (opcao != 's' && opcao != 'S');
