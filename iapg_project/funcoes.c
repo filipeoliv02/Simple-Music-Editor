@@ -30,7 +30,7 @@ void le_input(char *temp);
 
 struct musica vec_musicas[TAM_VECTOR];    // inicializa-se com a estrutura criada acima um vector de musicas
 int num_musicas = 0;            // numero de musicas no vector
-char ficheiro_musicas[] = "ficheiro_musicas.txt";// nome do ficheiro
+char ficheiro_musicas[] = "musicas.txt";// nome do ficheiro
 
 int menu() {
     char op;
@@ -81,6 +81,7 @@ void imprime_musica(struct musica *m) {
     /*
     * POR FAZER - esta funcao deve imprimir a musica contida na estrutura - titulo + artista
     */
+    printf("%s - %s\n", m->artista, m->titulo);
 }
 
 void le_input(char *temp) {
@@ -91,26 +92,9 @@ void le_input(char *temp) {
 }
 
 void lista_todas_musicas() {
-    /*
-    * POR FAZER - esta funcao deve percorrer o vector de musicas e imprimir a respectiva informacao de cada musica
-    */
-    FILE *fp;
-    char str[50];
-    char* filename = ficheiro_musicas;
-
-    fp = fopen(filename, "r");
-    if (fp == NULL){
-        printf("Could not open file %s",filename);
-        return 1;
+    for(int i = 0; i < num_musicas; i++) {
+        imprime_musica(&vec_musicas[i]);
     }
-    while (fgets(str, 50, fp) != NULL)
-        printf("%s", str);
-    fclose(fp);
-    return 0;
-
-
-
-
 }
 
 void ler_nova_musica(struct musica *m) {
