@@ -14,9 +14,7 @@ struct musica {
 
 
 
-struct musica vec_musicas[50];    // inicializa-se com a estrutura criada acima um vector de musicas
-int num_musicas = 0;            // numero de musicas no vector
-char ficheiro_musicas[] = "musicas.txt";
+
 
 int menu_music() {
     char op;
