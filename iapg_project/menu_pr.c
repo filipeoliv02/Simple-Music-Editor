@@ -26,9 +26,7 @@ int menu_pr() {
                 break;
             case '2':
                 printf("\n Musicas \n");
-
-
-
+                menu_music();
                 break;
             case '3':
                 printf("\n Artistas\n");
@@ -38,8 +36,6 @@ int menu_pr() {
             case '4':
                 printf("\n Ficheiro carregado com sucesso \n");
                 carregar_musicas_do_ficheiro();
-
-
 
             case 's':
             case 'S':
