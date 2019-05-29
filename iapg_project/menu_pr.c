@@ -21,15 +21,27 @@ int menu_pr() {
 
                 break;
             case '2':
-                printf("\n Insira Nova Musica \n");
+                printf("\n Menu Procurar \n");
 
                 break;
             case '3':
-                printf("\n Gravar musicas para ficheiro \n");
+                printf("\n Menu Adicionar \n");
 
                 break;
             case '4':
-                printf("\n Carregar musicas do ficheiro para a memoria \n");
+                printf("\n Menu Editar \n");
+
+                break;
+            case '5':
+                printf("\n Menu Remover \n");
+
+                break;
+            case '6':
+                printf("\n Carregar Informacao do ficheiro \n");
+
+                break;
+            case '7':
+                printf("\n Gravar no ficehiro \n");
 
                 break;
 
