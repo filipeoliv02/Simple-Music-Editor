@@ -1,6 +1,9 @@
 #include "menu_pr.h"
 #include <stdio.h>
 #include "menu_search.h"
+#include "menu_add.h"
+#include "menu_edit.h"
+#include "menu_remove.h"
 
 int menu_pr() {
     char opcao;
@@ -27,15 +30,15 @@ int menu_pr() {
                 break;
             case '3':
                 printf("\n Menu Adicionar \n");
-
+                menu_add();
                 break;
             case '4':
                 printf("\n Menu Editar \n");
-
+                menu_edit();
                 break;
             case '5':
                 printf("\n Menu Remover \n");
-
+                menu_remove();
                 break;
             case '6':
                 printf("\n Carregar Informacao do ficheiro \n");
