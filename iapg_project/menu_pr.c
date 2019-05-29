@@ -19,21 +19,14 @@ int menu_pr() {
                 lista_todas_musicas();
                 break;
             case '2':
-                printf("\n Menu Procurar \n");
+                printf("\n Musicas \n");
 
                 break;
             case '3':
-                printf("\n Menu Adicionar \n");
+                printf("\n Artistas\n");
 
                 break;
-            case '4':
-                printf("\n Menu Editar \n");
 
-                break;
-            case '5':
-                printf("\n Menu Remover \n");
-
-                break;
 
 
             case 's':
