@@ -13,6 +13,7 @@ struct musica {
     char artista[TAM_NOME];
 };
 
+
 void lista_todas_musicas();
 
 void imprime_musica(struct musica *m);
@@ -29,7 +30,7 @@ void le_input(char *temp);
 
 struct musica vec_musicas[TAM_VECTOR];    // inicializa-se com a estrutura criada acima um vector de musicas
 int num_musicas = 0;            // numero de musicas no vector
-char ficheiro_musicas[] = "musicas.txt";// nome do ficheiro
+char ficheiro_musicas[] = "ficheiro_musicas.txt";// nome do ficheiro
 
 int menu() {
     char op;
@@ -95,11 +96,11 @@ void lista_todas_musicas() {
     */
     FILE *fPointer;
     fPointer = fopen(ficheiro_musicas, "r");
-    char singleLine[36];
+    char linha[50];
 
     while (!feof(fPointer)) {
-        fgets(singleLine, 36, fPointer);
-        puts(singleLine);
+        fgets(linha,50, fPointer);
+        puts(linha);
     }
     fclose(fPointer);
 
