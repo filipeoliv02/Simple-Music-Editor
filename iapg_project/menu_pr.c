@@ -10,8 +10,6 @@ int menu_pr() {
         printf(" [1] Listar Informacao \n");
         printf(" [2] Musicas \n");
         printf(" [3] Artistas \n");
-        printf(" [4] Carregar Informacao do ficheiro\n");
-        printf(" [5] Gravar no ficheiro\n");
         printf(" [s] Sair\n");
         fflush(stdin);
         scanf("%c", &opcao);
