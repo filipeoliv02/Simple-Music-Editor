@@ -47,15 +47,15 @@ int menu_artist() {
                 break;
             case '3':
                 printf("\n Insira Nome Artista \n");
-                gravar_musicas_para_ficheiro();
+
                 break;
             case '4':
                 printf("\n Insira Nome Artista \n");
-                carregar_musicas_do_ficheiro();
+
                 break;
             case '5':
                 printf("\n Insira Nome Artista \n");
-                carregar_musicas_do_ficheiro();
+
                 break;
             case 's':
             case 'S':
@@ -74,7 +74,7 @@ int menu_artist() {
 
 
     void artist_list() {
-        for (int i = 0; i < num_musicas; i++) {
+        for (int i = 0; i < num_artistas; i++) {
             imprime_musica(&vec_musicas[i]);
 
         }
