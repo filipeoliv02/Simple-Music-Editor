@@ -1,8 +1,10 @@
 
 #include "menu_add.h"
 #include "funcoes.h"
+#include "funcoes.c"
 #include <stdio.h>
-
+#include <string.h>
+#include <locale.h>
 
 int menu_add() {
     char opcao;
@@ -17,7 +19,8 @@ int menu_add() {
         switch (opcao) {
             case '1':
                 printf("\n Insira o titulo \n");
-
+                ler_nova_musica(&vec_musicas[num_musicas]);
+                num_musicas++; // aumenta o numero de musicas no vector
                 break;
             case '2':
                 printf("\n Insira o nome do Artista \n");

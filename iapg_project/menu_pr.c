@@ -4,6 +4,7 @@
 #include "menu_add.h"
 #include "menu_edit.h"
 #include "menu_remove.h"
+#include "funcoes.h"
 
 int menu_pr() {
     char opcao;
@@ -22,7 +23,7 @@ int menu_pr() {
         switch (opcao) {
             case '1':
                 printf("\n Todas as Informacoes \n");
-
+                lista_todas_musicas();
                 break;
             case '2':
                 printf("\n Menu Procurar \n");
@@ -41,11 +42,14 @@ int menu_pr() {
                 menu_remove();
                 break;
             case '6':
-                printf("\n Carregar Informacao do ficheiro \n");
 
+                carregar_musicas_do_ficheiro();
+                printf("\n Ficheiro Carregado com Sucesso \n");
                 break;
             case '7':
-                printf("\n Gravar no ficehiro \n");
+
+                gravar_musicas_para_ficheiro();
+                printf("\n Ficheiro Gravado com Sucesso \n");
 
                 break;
 
