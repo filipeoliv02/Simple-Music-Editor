@@ -45,7 +45,7 @@ int menu() {
         scanf("%c", &op);
         switch (op) {
             case '1':
-                printf("\n Listar Musicas \n");
+                printf("\n Musicas \n");
                 lista_todas_musicas();
                 break;
             case '2':
