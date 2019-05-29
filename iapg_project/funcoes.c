@@ -94,15 +94,22 @@ void lista_todas_musicas() {
     /*
     * POR FAZER - esta funcao deve percorrer o vector de musicas e imprimir a respectiva informacao de cada musica
     */
-    FILE *fPointer;
-    fPointer = fopen(ficheiro_musicas, "r");
-    char linha[50];
+    FILE *fp;
+    char str[50];
+    char* filename = ficheiro_musicas;
 
-    while (!feof(fPointer)) {
-        fgets(linha,50, fPointer);
-        puts(linha);
+    fp = fopen(filename, "r");
+    if (fp == NULL){
+        printf("Could not open file %s",filename);
+        return 1;
     }
-    fclose(fPointer);
+    while (fgets(str, 50, fp) != NULL)
+        printf("%s", str);
+    fclose(fp);
+    return 0;
+
+
+
 
 }
 
