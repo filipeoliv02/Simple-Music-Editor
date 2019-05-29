@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "funcoes.h"
-
+#include "menu_pr.h"
 int main() {
-    menu();
+    menu_pr();
     return 0;
 }
