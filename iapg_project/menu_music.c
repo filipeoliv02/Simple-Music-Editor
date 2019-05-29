@@ -9,7 +9,7 @@ int menu_music() {
         printf("Escolha uma opcao entre as possiveis: \n");
         printf(" [1]Listar Musicas \n");
         printf(" [2]Procurar Musica \n");
-        printf(" [3]Adicionar Musica \n")
+        printf(" [3]Adicionar Musica \n");
         printf(" [4]Editar Musica \n");
         printf(" [5]Remover Musica \n");
         printf(" [S]Sair \n");
