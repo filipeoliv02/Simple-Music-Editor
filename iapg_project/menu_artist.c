@@ -9,16 +9,13 @@
 
 // estruturas permitem definir novos tipos de dados - tipo de dados neste caso ira ter o nome musica - e composto por duas strings, titulo e artista
 struct musica {
+    char titulo[TAM_NOME];
     char artista[TAM_NOME];
 };
 
 struct musica vec_musicas[TAM_VECTOR];    // inicializa-se com a estrutura criada acima um vector de musicas
 int artist_num = 0;            // numero de musicas no vector
 char artist_file[] = "musicas.txt";// nome do ficheiro
-
-
-
-
 
 
 
@@ -32,7 +29,8 @@ int menu_artist() {
         printf(" [3]Adicionar Artista\n");
         printf(" [4]Editar Artista \n");
         printf(" [5]Remover artista \n");
-        printf(" [6]Gravar no ficheiro\n");
+        printf(" [6]Carregar o ficheiro\n");
+        printf(" [7]Gravar no ficheiro\n");
         printf(" [S]Sair \n");
         fflush(stdin);
         scanf("%c", &op);
@@ -43,23 +41,27 @@ int menu_artist() {
                 break;
             case '2':
                 printf("\n Insira Nome Artista \n");
-
+                artist_search();
                 break;
             case '3':
                 printf("\n Insira Nome Artista \n");
-
+                artist_add();
                 break;
             case '4':
                 printf("\n Insira Nome Artista \n");
-
+                artist_edit();
                 break;
             case '5':
                 printf("\n Insira Nome Artista \n");
+                artist_remove();
+                break;
             case '6':
-
+                artist_load();
+                printf("\n Ficheiro Carregado com Sucesso \n");
+                break;
+            case '7':
                 gravar_musicas_para_ficheiro();
                 printf("\n Ficheiro Gravado com Sucesso \n");
-
                 break;
             case 's':
             case 'S':
@@ -78,15 +80,11 @@ int menu_artist() {
 
 }
 
-
-
-    void artist_list(struct musica *m) {
+    void artist_print(struct musica *m) {
         printf("%s\n", m->artista);
+    }
 
-        }
-
-
-        void artist_search(){
+    void artist_search() {
 
     }
 
@@ -104,13 +102,11 @@ int menu_artist() {
 
 
 
-void artist_all_list() {
+void artist_list() {
     for (int i = 0; i < artist_num; i++) {
-        imprime_musica(&vec_musicas[i]);
+        artist_print(&vec_musicas[i]);
     }
 }
-
-
 
 
 void artist_load() {
@@ -124,27 +120,12 @@ void artist_load() {
         for (i = 0; i < artist_num; i++) {
             fgets(linha, sizeof(linha), fp);            // titulo
             linha[strlen(linha) - 1] = 0;                // retira quebra de linha
+            strcpy(vec_musicas[i].titulo, &linha[8]);        // titulo começa no 8º char
+            fgets(linha, sizeof(linha), fp);            // titulo
+            linha[strlen(linha) - 1] = 0;                // retira quebra de linha
             strcpy(vec_musicas[i].artista, &linha[8]);        // titulo começa no 8º char
 
         }
         fclose(fp);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

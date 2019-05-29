@@ -38,12 +38,10 @@ int menu_music() {
             case '1':
                 printf("\n Musicas \n");
                 music_list();
-
                 break;
             case '2':
                 printf("\n Insira o nome da Musica \n");
                 music_search();
-
                 break;
             case '3':
                 printf("\n Insira o nome da Musica \n");
@@ -62,7 +60,6 @@ int menu_music() {
                 printf("\n Ficheiro Carregado com Sucesso \n");
                 break;
             case '7':
-
                 gravar_musicas_para_ficheiro();
                 printf("\n Ficheiro Gravado com Sucesso \n");
                 break;
@@ -130,5 +127,3 @@ void music_load() {
         fclose(fp);
     }
 }
-
-

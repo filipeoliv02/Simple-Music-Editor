@@ -1,4 +1,3 @@
-
 #ifndef IAPG_PROJECT_MENU_ARTIST_H
 #define IAPG_PROJECT_MENU_ARTIST_H
 
@@ -8,7 +7,6 @@ void artist_search();
 void artist_add();
 void artist_remove();
 void artist_edit();
-void artist_all_list();
 void artist_load();
-
+void artist_print();
 #endif
