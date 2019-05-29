@@ -1,0 +1,7 @@
+
+#ifndef IAPG_PROJECT_MENU_ARTIST_H
+#define IAPG_PROJECT_MENU_ARTIST_H
+
+int menu_artist();
+
+#endif //IAPG_PROJECT_MENU_ARTIST_H
