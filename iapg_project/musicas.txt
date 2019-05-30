@@ -1,4 +1,4 @@
-musicas: 8
+musicas: 7
 titulo: Where the Streets Have No Name
 artista:   U2
 titulo: Porto Sentido
