@@ -1,5 +1,24 @@
 #ifndef IAPG_PROJECT_PROJECT_H
 #define IAPG_PROJECT_PROJECT_H
+#define TAM_NOME 50        // tamanho max de char na string - MACRO
+#define TAM_VECTOR 50    // numero de musicas que podem ser armazenadas em memoria
+
+// estruturas permitem definir novos tipos de dados - tipo de dados neste caso ira ter o nome musica - e composto por duas strings, titulo e artista
+ struct artista {
+    char nome[TAM_NOME];
+    char nacionalidade[TAM_NOME];
+
+} ;
+
+
+struct musica {
+    char titulo[TAM_NOME];
+    char artista[TAM_NOME];
+    //struct artista art;
+    //ARTISTA artista;
+
+};
+
 
 //MENU_PR
 int menu_pr();

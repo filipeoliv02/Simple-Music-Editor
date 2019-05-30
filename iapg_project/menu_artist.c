@@ -15,7 +15,7 @@ struct musica {
 
 struct musica vec_musicas[TAM_VECTOR];    // inicializa-se com a estrutura criada acima um vector de musicas
 int artist_num = 0;            // numero de musicas no vector
-char artist_file[] = "musicas.txt";// nome do ficheiro
+char artist_file[] = "artistas.txt";// nome do ficheiro
 
 
 
