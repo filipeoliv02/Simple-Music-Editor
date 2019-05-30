@@ -1,10 +1,8 @@
-#include "menu_pr.h"
+#include "project.h"
 #include <stdio.h>
 #include <string.h>
 #include <locale.h>
-#include "menu_music.h"
-#include "menu_artist.h"
-#include "menu_search.h"
+
 
 #define TAM_NOME 50        // tamanho max de char na string - MACRO
 #define TAM_VECTOR 50    // numero de musicas que podem ser armazenadas em memoria

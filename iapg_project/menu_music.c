@@ -1,5 +1,5 @@
 #include <string.h>
-#include "menu_music.h"
+#include "project.h"
 #include <stdio.h>
 
 #define TAM_NOME 50        // tamanho max de char na string - MACRO
