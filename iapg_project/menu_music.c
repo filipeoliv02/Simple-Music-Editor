@@ -16,6 +16,8 @@ int menu_music() {
         printf("Escolha uma opcao entre as possiveis: \n");
         printf(" [1]Listar Musicas \n");
         printf(" [2]Adicionar Musica \n");
+        printf(" [3]Editar Musica \n");
+        printf(" [4]Remover Musica \n");
         printf(" [5]Carregar o ficheiro\n");
         printf(" [6]Gravar no ficheiro\n");
         printf(" [S]Sair \n");
@@ -30,6 +32,14 @@ int menu_music() {
                 printf("\n Insira o nome da Musica \n");
                 music_add(&vec_musicas[music_num]);
                 music_num++; // aumenta o numero de musicas no vector
+                break;
+            case '3':
+                printf("\n Insira o nome da Musica \n");
+                music_edit();
+                break;
+            case '4':
+                printf("\n Insira o nome da Musica \n");
+                //music_remove(m);
                 break;
             case '5':
                 music_load();
@@ -70,9 +80,6 @@ void music_input(char *temp) {
 
 }
 
-void music_search() {
-
-}
 
 void music_add(struct musica *m) {
 
@@ -82,14 +89,7 @@ void music_add(struct musica *m) {
     music_input(m->titulo);
 }
 
-void music_edit(struct musica*m) {
 
-
-    getchar();
-    printf("Insert the nez music's title :\n");
-
-    music_input(m->titulo);
-}
 
 void music_remove(struct musica *m) {
 

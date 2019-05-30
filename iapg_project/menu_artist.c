@@ -12,6 +12,8 @@ int menu_artist() {
         printf("Escolha uma opcao entre as possiveis: \n");
         printf(" [1]Listar Artistas \n");
         printf(" [2]Adicionar Artista\n");
+        printf(" [3]Editar Artista \n");
+        printf(" [4]Remover artista \n");
         printf(" [5]Carregar o ficheiro\n");
         printf(" [6]Gravar no ficheiro\n");
         printf(" [S]Sair \n");
@@ -26,6 +28,14 @@ int menu_artist() {
                 printf("\n Insira Nome Artista \n");
                 artist_add(&vec_artistas[artist_num]);
                 artist_num++;
+                break;
+            case '3':
+                printf("\n Insira Nome Artista \n");
+                artist_edit();
+                break;
+            case '4':
+                printf("\n Insira Nome Artista \n");
+                artist_remove();
                 break;
             case '5':
                 artist_load();
@@ -67,9 +77,7 @@ void artist_input(char *temp) {
     strcpy(temp, input);
 }
 
-void artist_search() {
 
-}
 
 void artist_add(struct artista *a) {
 
@@ -80,19 +88,6 @@ void artist_add(struct artista *a) {
     printf("Insira a nacionalidade:\n");
     artist_input(a->nacionalidade);
 
-}
-
-void artist_remove() {
-
-}
-
-void artist_edit(struct artista *a) {
-    getchar();
-    printf("Insira o nome do artista:\n");
-    artist_input(a->nome);
-
-    printf("Insira a nacionalidade:\n");
-    artist_input(a->nacionalidade);
 }
 
 
