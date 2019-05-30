@@ -63,7 +63,8 @@ int menu_artist() {
 }
 
 void artist_print(struct artista *a) {
-    printf("%s\n", a->nome);
+    printf("%s - %s\n", a->nome, a->nacionalidade);
+
 }
 
 
@@ -84,8 +85,10 @@ void artist_add(struct artista *a) {
 
     getchar();
     printf("Insira o nome do artista:\n");
-
     artist_input(a->nome);
+
+    printf("Insira a nacionalidade:\n");
+    artist_input(a->nacionalidade);
 
 }
 

@@ -18,7 +18,10 @@ int menu_search() {
         switch (op) {
             case '1':
                 printf("\n Insira o Titulo da Musica \n");
+                music_input(pesquisa)
+                for{
 
+                }
                 break;
             case '2':
                 printf("\n Insira o nome do Artista \n");
