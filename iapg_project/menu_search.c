@@ -5,7 +5,8 @@
 
 
 int menu_search() {
-    char op;
+
+    char op, pesquisa[50];
     do {
         printf("Escolha uma opcao entre as possiveis: \n");
         printf(" [1]Pesquisar Titulo \n");
@@ -18,8 +19,10 @@ int menu_search() {
         switch (op) {
             case '1':
                 printf("\n Insira o Titulo da Musica \n");
-                music_input(pesquisa)
-                for{
+                music_input(pesquisa);
+                for(int i=0;i<music_num;i++){
+                    if(strcmp(vec_musicas[i].titulo,pesquisa)==0)
+                        menu_temp(&vec_musicas[i]);
 
                 }
                 break;
@@ -49,3 +52,6 @@ int menu_search() {
 
     return 0;
 }
+
+
+

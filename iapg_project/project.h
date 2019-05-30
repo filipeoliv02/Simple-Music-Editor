@@ -5,15 +5,18 @@
 #define TAM_NOME 50        // tamanho max de char na string - MACRO
 #define TAM_VECTOR 50    // numero de musicas que podem ser armazenadas em memoria
 
- struct artista {               // estruturas permitem definir novos tipos de dados - tipo de dados neste caso ira ter o nome artista - e composto por duas strings, nome e nacionalidade
+int music_num;            // numero de musicas no vector
+
+ typedef struct artista {               // estruturas permitem definir novos tipos de dados - tipo de dados neste caso ira ter o nome artista - e composto por duas strings, nome e nacionalidade
     char nome[TAM_NOME];
     char nacionalidade[TAM_NOME];
-} ;
+}ARTISTA;
 
 struct musica {             // estruturas permitem definir novos tipos de dados - tipo de dados neste caso ira ter o nome musica - e composto por duas strings e uma estrutura, titulo e artista
     char titulo[TAM_NOME];
     char artista[TAM_NOME];
-    struct artista nome;
+
+    ARTISTA cantor;
 };
 
 struct musica vec_musicas[TAM_VECTOR];    // inicializa-se com a estrutura criada acima um vector de musicas
@@ -33,7 +36,7 @@ void music_list();
 void music_search();
 void music_add(struct musica *m);
 void music_edit();
-void music_remove();
+void music_remove(struct musica *m);
 void music_print(struct musica *m);
 void music_load();
 void music_save();
@@ -54,5 +57,8 @@ void artist_input(char *temp);
 //MENU_SEARCH
 int menu_search();
 
+
+
+int menu_temp(struct musica *m);
 
 #endif

@@ -5,9 +5,6 @@
 
 
 
-
-
-int num_musicas = 0;            // numero de musicas no vector
 char ficheiro_musicas[] = "musicas.txt";// nome do ficheiro
 
 
@@ -78,7 +75,7 @@ void imprime_musica (struct musica *m) {
 
 
 void lista_todas_musicas() {
-    for (int i = 0; i < num_musicas; i++) {
+    for (int i = 0; i < music_num; i++) {
         printf("[%d] ",i+1);
         imprime_musica(&vec_musicas[i]);
     }
@@ -92,8 +89,8 @@ void gravar_ficheiro() {
     int i;
     fp = fopen(ficheiro_musicas, "w");
     if (fp != NULL) {
-        fprintf(fp, "musicas: %d\n", num_musicas);
-        for (i = 0; i < num_musicas; i++) {
+        fprintf(fp, "musicas: %d\n", music_num);
+        for (i = 0; i < music_num; i++) {
             fprintf(fp, "titulo: %s\n", vec_musicas[i].titulo);
             fprintf(fp, "artista: %s\n", vec_musicas[i].artista);
         }
@@ -105,11 +102,11 @@ void carregar_ficheiro() {
     FILE *fp;
     int i = 0;
     char linha[TAM_NOME];
-    num_musicas = 0;
+    music_num = 0;
     fp = fopen(ficheiro_musicas, "r");
     if (fp != NULL) {
-        fscanf(fp, "%*s %d\n", &num_musicas);            // ignore the string and store only the int
-        for (i = 0; i < num_musicas; i++) {
+        fscanf(fp, "%*s %d\n", &music_num);            // ignore the string and store only the int
+        for (i = 0; i < music_num; i++) {
             fgets(linha, sizeof(linha), fp);            // titulo
             linha[strlen(linha) - 1] = 0;                // retira quebra de linha
             strcpy(vec_musicas[i].titulo, &linha[8]);        // titulo começa no 8º char
