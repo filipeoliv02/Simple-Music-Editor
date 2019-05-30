@@ -79,6 +79,7 @@ void imprime_musica (struct musica *m) {
 
 void lista_todas_musicas() {
     for (int i = 0; i < num_musicas; i++) {
+        printf("[%d] ",i+1);
         imprime_musica(&vec_musicas[i]);
     }
 }

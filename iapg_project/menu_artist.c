@@ -98,6 +98,7 @@ void artist_input(char *temp) {
 
 void artist_list() {
     for (int i = 0; i < artist_num; i++) {
+        printf("[%d] ",i+1);
         artist_print(&vec_artistas[i]);
     }
 }
@@ -128,10 +129,10 @@ void artist_save() {
     int i;
     fp = fopen(artist_file, "w");
     if (fp != NULL) {
-        fprintf(fp, "musicas: %d\n", artist_num);
+        fprintf(fp, "artistas: %d\n", artist_num);
         for (i = 0; i < artist_num; i++) {
-            fprintf(fp, "titulo: %s\n", vec_artistas[i].nome);
-            fprintf(fp, "artista: %s\n", vec_artistas[i].nacionalidade);
+            fprintf(fp, "nome: %s\n", vec_artistas[i].nome);
+            fprintf(fp, "nacionalidade: %s\n", vec_artistas[i].nacionalidade);
         }
         fclose(fp);
     }

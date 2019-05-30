@@ -3,11 +3,6 @@
 #include <stdio.h>
 
 
-
-
-
-
-
 int music_num = 0;            // numero de musicas no vector
 char music_file[] = "musicas.txt";// nome do ficheiro
 
@@ -107,6 +102,7 @@ void music_remove(){
 
 void music_list() {
     for (int i = 0; i < music_num; i++) {
+        printf("[%d] ",i+1);
         music_print(&vec_musicas[i]);
     }
 }
