@@ -1,7 +1,6 @@
 #include <string.h>
 #include "menu_music.h"
 #include <stdio.h>
-#include "menu_pr.h"
 
 #define TAM_NOME 50        // tamanho max de char na string - MACRO
 #define TAM_VECTOR 50    // numero de musicas que podem ser armazenadas em memoria
@@ -84,6 +83,16 @@ void music_print(struct musica *m){
     printf("%s\n", m->titulo);
 }
 
+
+void le_input(char *temp) {
+    char input[TAM_NOME];
+    /*
+    * POR FAZER - esta funcao deve ler uma string escrita pelo utilizador no terminal, e guarda-la em temp
+    */
+    scanf("%s", input);
+    strcpy(temp,input);
+}
+
 void music_search(){
 
 }
@@ -134,6 +143,20 @@ void music_load() {
             fgets(linha, sizeof(linha), fp);            // artista
             linha[strlen(linha) - 1] = 0;                // retira quebra de linha
             strcpy(vec_musicas[i].artista, &linha[9]);        // artista começa no 9º char
+        }
+        fclose(fp);
+    }
+}
+
+void music_save() {
+    FILE *fp;
+    int i;
+fp = fopen(music_file, "w");
+    if (fp != NULL) {
+        fprintf(fp, "musicas: %d\n", music_num);
+        for (i = 0; i < music_num; i++) {
+            fprintf(fp, "titulo: %s\n", vec_musicas[i].titulo);
+            fprintf(fp, "artista: %s\n", vec_musicas[i].artista);
         }
         fclose(fp);
     }

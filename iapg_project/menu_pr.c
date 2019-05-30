@@ -55,7 +55,7 @@ int menu_pr() {
                 break;
             case '5':
                 printf("\n Ficheiro guardado com sucesso \n");
-                music_save();
+                gravar_ficheiro();
                 break;
             case 's':
             case 'S':
@@ -83,14 +83,6 @@ void imprime_musica (struct musica *m) {
     printf("%s - %s \n", m->artista, m->titulo);
 }
 
-void le_input(char *temp) {
-    char input[TAM_NOME];
-    /*
-    * POR FAZER - esta funcao deve ler uma string escrita pelo utilizador no terminal, e guarda-la em temp
-    */
-    scanf("%s", input);
-    strcpy(temp,input);
-}
 
 void lista_todas_musicas() {
     for (int i = 0; i < num_musicas; i++) {
@@ -101,7 +93,7 @@ void lista_todas_musicas() {
 
 
 
-void music_save() {
+void gravar_ficheiro() {
     FILE *fp;
     int i;
     fp = fopen(ficheiro_musicas, "w");

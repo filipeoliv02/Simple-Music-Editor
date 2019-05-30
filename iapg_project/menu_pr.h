@@ -9,10 +9,10 @@ void imprime_musica();
 
 void ler_nova_musica();
 
-void music_save();
+void gravar_ficheiro();
 
 void carregar_musicas_do_ficheiro();
 
-void le_input();
+
 
 #endif

@@ -9,4 +9,6 @@ void music_remove();
 void music_print();
 void music_load();
 void ler_nova_musica();
+void music_save();
+void le_input();
 #endif
