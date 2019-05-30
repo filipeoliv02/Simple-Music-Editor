@@ -43,11 +43,11 @@ void music_input(char *temp);
 int menu_artist();
 void artist_list();
 void artist_search();
-void artist_add(struct artista *m);
+void artist_add(struct artista *a);
 void artist_remove();
 void artist_edit();
 void artist_load();
-void artist_print(struct artista *m);
+void artist_print(struct artista *a);
 void artist_save();
 void artist_input(char *temp);
 

@@ -62,20 +62,30 @@ int menu_artist() {
 
 }
 
-void artist_print(struct artista *m) {
-    printf("%s\n", m->nome);
+void artist_print(struct artista *a) {
+    printf("%s\n", a->nome);
+}
+
+
+void artist_input(char *temp) {
+    char input[TAM_NOME];
+    /*
+    * POR FAZER - esta funcao deve ler uma string escrita pelo utilizador no terminal, e guarda-la em temp
+    */
+    scanf("%s", input);
+    strcpy(temp, input);
 }
 
 void artist_search() {
 
 }
 
-void artist_add(struct artista *m) {
+void artist_add(struct artista *a) {
 
     getchar();
     printf("Insira o nome do artista:\n");
 
-    artist_input(m->nome);
+    artist_input(a->nome);
 
 }
 
@@ -87,14 +97,6 @@ void artist_edit() {
 
 }
 
-void artist_input(char *temp) {
-    char input[TAM_NOME];
-    /*
-    * POR FAZER - esta funcao deve ler uma string escrita pelo utilizador no terminal, e guarda-la em temp
-    */
-    scanf("%s", input);
-    strcpy(temp, input);
-}
 
 void artist_list() {
     for (int i = 0; i < artist_num; i++) {
