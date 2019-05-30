@@ -4,6 +4,7 @@
 #include <locale.h>
 #include "menu_music.h"
 #include "menu_artist.h"
+#include "menu_search.h"
 
 #define TAM_NOME 50        // tamanho max de char na string - MACRO
 #define TAM_VECTOR 50    // numero de musicas que podem ser armazenadas em memoria
@@ -30,8 +31,9 @@ int menu_pr() {
         printf(" [1] Listar Informacao \n");
         printf(" [2] Musicas \n");
         printf(" [3] Artistas \n");
-        printf(" [4] Carregar informacao do ficheiro\n");
-        printf(" [5] Guardar informacao no ficheiro\n");
+        printf(" [4] Procurar \n");
+        printf(" [5] Carregar informacao do ficheiro\n");
+        printf(" [6] Guardar informacao no ficheiro\n");
         printf(" [s] Sair\n");
         fflush(stdin);
         scanf("%c", &opcao);
@@ -47,13 +49,15 @@ int menu_pr() {
             case '3':
                 printf("\n Artistas\n");
                 menu_artist();
-
                 break;
             case '4':
+                menu_search();
+                break;
+            case '5':
                 printf("\n Ficheiro carregado com sucesso \n");
                 carregar_ficheiro();
                 break;
-            case '5':
+            case '6':
                 printf("\n Ficheiro guardado com sucesso \n");
                 gravar_ficheiro();
                 break;

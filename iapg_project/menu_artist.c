@@ -25,12 +25,11 @@ int menu_artist() {
     do {
         printf("Escolha uma opcao entre as possiveis: \n");
         printf(" [1]Listar Artistas \n");
-        printf(" [2]Procurar Artista \n");
-        printf(" [3]Adicionar Artista\n");
-        printf(" [4]Editar Artista \n");
-        printf(" [5]Remover artista \n");
-        printf(" [6]Carregar o ficheiro\n");
-        printf(" [7]Gravar no ficheiro\n");
+        printf(" [2]Adicionar Artista\n");
+        printf(" [3]Editar Artista \n");
+        printf(" [4]Remover artista \n");
+        printf(" [5]Carregar o ficheiro\n");
+        printf(" [6]Gravar no ficheiro\n");
         printf(" [S]Sair \n");
         fflush(stdin);
         scanf("%c", &op);
@@ -41,25 +40,21 @@ int menu_artist() {
                 break;
             case '2':
                 printf("\n Insira Nome Artista \n");
-                artist_search();
+                artist_add();
                 break;
             case '3':
                 printf("\n Insira Nome Artista \n");
-                artist_add();
+                artist_edit();
                 break;
             case '4':
                 printf("\n Insira Nome Artista \n");
-                artist_edit();
-                break;
-            case '5':
-                printf("\n Insira Nome Artista \n");
                 artist_remove();
                 break;
-            case '6':
+            case '5':
                 artist_load();
                 printf("\n Ficheiro Carregado com Sucesso \n");
                 break;
-            case '7':
+            case '6':
                music_save();
                 printf("\n Ficheiro Gravado com Sucesso \n");
                 break;

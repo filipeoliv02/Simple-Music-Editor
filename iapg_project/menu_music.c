@@ -24,12 +24,11 @@ int menu_music() {
     do {
         printf("Escolha uma opcao entre as possiveis: \n");
         printf(" [1]Listar Musicas \n");
-        printf(" [2]Procurar Musica \n");
-        printf(" [3]Adicionar Musica \n");
-        printf(" [4]Editar Musica \n");
-        printf(" [5]Remover Musica \n");
-        printf(" [6]Carregar o ficheiro\n");
-        printf(" [7]Gravar no ficheiro\n");
+        printf(" [2]Adicionar Musica \n");
+        printf(" [3]Editar Musica \n");
+        printf(" [4]Remover Musica \n");
+        printf(" [5]Carregar o ficheiro\n");
+        printf(" [6]Gravar no ficheiro\n");
         printf(" [S]Sair \n");
         fflush(stdin);
         scanf("%c", &op);
@@ -40,26 +39,22 @@ int menu_music() {
                 break;
             case '2':
                 printf("\n Insira o nome da Musica \n");
-                music_search();
-                break;
-            case '3':
-                printf("\n Insira o nome da Musica \n");
                 music_add(&vec_musicas[music_num]);
                 music_num++; // aumenta o numero de musicas no vector
                 break;
-            case '4':
+            case '3':
                 printf("\n Insira o nome da Musica \n");
                 music_edit();
                 break;
-            case '5':
+            case '4':
                 printf("\n Insira o nome da Musica \n");
                 music_remove();
                 break;
-            case '6':
+            case '5':
                 music_load();
                 printf("\n Ficheiro Carregado com Sucesso \n");
                 break;
-            case '7':
+            case '6':
                 music_save();
                 printf("\n Ficheiro Gravado com Sucesso \n");
                 break;
