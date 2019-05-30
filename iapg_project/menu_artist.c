@@ -26,6 +26,7 @@ int menu_artist() {
                 printf("\n Insira Nome Artista \n");
                 artist_add(&vec_artistas[artist_num]);
                 artist_num++;
+                artist_save();
                 break;
             case '5':
                 artist_load();
@@ -43,7 +44,7 @@ int menu_artist() {
                 printf(" Opcao invalida!!! \n");
         }
         if (op != 's' && op != 'S') {
-            printf("\n\n Prima qualquer tecla para voltar ao menu...");
+            printf("\n\n Prima qualquer tecla para voltar ao menu...\n");
             getchar();
         }
     } while (op != 's' && op != 'S');
@@ -63,7 +64,9 @@ void artist_input(char *temp) {
     /*
     * POR FAZER - esta funcao deve ler uma string escrita pelo utilizador no terminal, e guarda-la em temp
     */
-    scanf("%s", input);
+    //scanf("%s", input);
+
+    scanf(" %[^\n]s", input);
     strcpy(temp, input);
 }
 
@@ -86,7 +89,8 @@ void artist_remove() {
 
 void artist_edit(struct artista *a) {
     getchar();
-    printf("Insira o nome do artista:\n");
+
+    printf("Insert the new artist's name :\n");
     artist_input(a->nome);
 
     printf("Insira a nacionalidade:\n");

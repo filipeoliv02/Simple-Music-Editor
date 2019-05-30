@@ -1,7 +1,7 @@
 #include "project.h"
 
 
-int menu_edit(struct musica *m) {                   //struct musica *m ?
+/*int menu_edit(struct musica *m) {                   //struct musica *m ?
 
     char op;
     do {
@@ -59,7 +59,6 @@ int menu_artist_edit(struct artista *a) {                   //struct musica *m ?
         scanf("%c", &op);
         switch (op) {
             case '1':
-                artist_edit(a);
                 break;
             case '2':
                 //artist_edit();
@@ -87,4 +86,4 @@ int menu_artist_edit(struct artista *a) {                   //struct musica *m ?
     } while (op != 's' && op != 'S' && op != '2');
 
     return 0;
-}
+}*/

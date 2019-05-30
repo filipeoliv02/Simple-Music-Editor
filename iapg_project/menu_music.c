@@ -30,6 +30,7 @@ int menu_music() {
                 printf("\n Insira o nome da Musica \n");
                 music_add(&vec_musicas[music_num]);
                 music_num++; // aumenta o numero de musicas no vector
+                music_save();
                 break;
             case '5':
                 music_load();
@@ -47,7 +48,7 @@ int menu_music() {
                 printf(" Opcao invalida!!! \n");
         }
         if (op != 's' && op != 'S') {
-            printf("\n\n Prima qualquer tecla para voltar ao menu...");
+            printf("\n\n Prima qualquer tecla para voltar ao menu...\n");
             getchar();
         }
     } while (op != 's' && op != 'S');
@@ -75,7 +76,7 @@ void music_edit(struct musica*m) {
 
 
     getchar();
-    printf("Insert the nez music's title :\n");
+    printf("Insert the new music's title :\n");
 
     music_input(m->titulo);
 }
@@ -111,25 +112,25 @@ void music_remove(struct musica *m) {
         }
     }
 
-    void music_load() {
-        FILE *fp;
-        int i = 0;
-        char linha[TAM_NOME];
-        music_num = 0;
-        fp = fopen(music_file, "r");
-        if (fp != NULL) {
-            fscanf(fp, "%*s %d\n", &music_num);            // ignore the string and store only the int
-            for (i = 0; i < music_num; i++) {
-                fgets(linha, sizeof(linha), fp);            // titulo
-                linha[strlen(linha) - 1] = 0;                // retira quebra de linha
-                strcpy(vec_musicas[i].titulo, &linha[8]);        // titulo começa no 8º char
-                fgets(linha, sizeof(linha), fp);            // artista
-                linha[strlen(linha) - 1] = 0;                // retira quebra de linha
-                strcpy(vec_musicas[i].artista, &linha[9]);        // artista começa no 9º char
-            }
-            fclose(fp);
+void music_load() {
+    FILE *fp;
+    int i = 0;
+    char linha[TAM_NOME];
+    music_num = 0;
+    fp = fopen(music_file, "r");
+    if (fp != NULL) {
+        fscanf(fp, "%*s %d\n", &music_num);            // ignore the string and store only the int
+        for (i = 0; i < music_num; i++) {
+            fgets(linha, sizeof(linha), fp);            // titulo
+            linha[strlen(linha) - 1] = 0;                // retira quebra de linha
+            strcpy(vec_musicas[i].titulo, &linha[8]);        // titulo começa no 8º char
+            fgets(linha, sizeof(linha), fp);            // artista
+            linha[strlen(linha) - 1] = 0;                // retira quebra de linha
+            strcpy(vec_musicas[i].artista, &linha[9]);        // artista começa no 9º char
         }
+        fclose(fp);
     }
+}
 
     void music_save() {
         FILE *fp;

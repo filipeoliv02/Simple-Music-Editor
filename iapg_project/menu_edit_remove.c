@@ -14,7 +14,8 @@ int menu_edit_remove_music(struct musica *m) {
         scanf("%c", &op);
         switch (op) {
             case '1':
-                menu_edit(m);
+                music_edit(m);
+                music_save();
                 break;
             case '2':
                 music_remove(m);
@@ -27,7 +28,7 @@ int menu_edit_remove_music(struct musica *m) {
                 printf(" Opcao invalida!!! \n");
         }
         if (op != 's' && op != 'S') {
-            printf("\n\n Prima qualquer tecla para voltar ao menu...");
+            printf("\n\n Prima qualquer tecla para voltar ao menu... \n");
             getchar();
         }
     } while (op != 's' && op != 'S' && op != '2');
@@ -36,7 +37,6 @@ int menu_edit_remove_music(struct musica *m) {
 }
 
 int menu_edit_remove_artist(struct artista *a) {
-
     char op;
     do {
         artist_print(a);
@@ -48,7 +48,9 @@ int menu_edit_remove_artist(struct artista *a) {
         scanf("%c", &op);
         switch (op) {
             case '1':
-                menu_artist_edit(a);
+                artist_edit(a);
+
+                artist_save();
                 break;
             case '2':
                 //music_remove(a);
@@ -61,7 +63,7 @@ int menu_edit_remove_artist(struct artista *a) {
                 printf(" Opcao invalida!!! \n");
         }
         if (op != 's' && op != 'S') {
-            printf("\n\n Prima qualquer tecla para voltar ao menu...");
+            printf("\n\n Prima qualquer tecla para voltar ao menu... \n");
             getchar();
         }
     } while (op != 's' && op != 'S' && op != '2');

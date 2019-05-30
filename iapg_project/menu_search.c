@@ -17,21 +17,28 @@ int menu_search() {
         scanf("%c", &op);
         switch (op) {
             case '1':
+                music_load();
                 printf("\n Insira o Titulo da Musica \n");
                 music_input(pesquisa);
                 for(int i=0;i<music_num;i++){
                     if(strcmp(vec_musicas[i].titulo,pesquisa)==0)
-                        menu_edit_remove_music(&vec_musicas[i]);
 
+
+                        menu_edit_remove_music(&vec_musicas[i]);
                 }
                 break;
             case '2':
+                artist_load();
                 printf("\n Insira o nome do Artista \n");
+
                 artist_input(pesquisa);
                 for(int i=0;i<artist_num;i++){
+
+
+                    printf("\n TEST FOR \n");
+
                     if(strcmp(vec_artistas[i].nome,pesquisa)==0)
                         menu_edit_remove_artist(&vec_artistas[i]);
-
                 }
                 break;
             case '3':
@@ -47,9 +54,10 @@ int menu_search() {
             default:
                 //system("cls"); // clear screen - cls windows or clear for linux/unix
                 printf(" Opcao invalida!!! \n");
+                break;
         }
         if (op != 's' && op != 'S') {
-            printf("\n\n Prima qualquer tecla para voltar ao menu...");
+            printf("\n\n Prima qualquer tecla para voltar ao menu...  \n");
             getchar();
         }
     } while (op != 's' && op != 'S');
