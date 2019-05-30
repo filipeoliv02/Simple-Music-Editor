@@ -77,9 +77,7 @@ void artist_input(char *temp) {
     strcpy(temp, input);
 }
 
-void artist_search() {
 
-}
 
 void artist_add(struct artista *a) {
 
@@ -89,14 +87,6 @@ void artist_add(struct artista *a) {
 
     printf("Insira a nacionalidade:\n");
     artist_input(a->nacionalidade);
-
-}
-
-void artist_remove() {
-
-}
-
-void artist_edit() {
 
 }
 

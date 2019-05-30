@@ -80,9 +80,6 @@ void music_input(char *temp) {
 
 }
 
-void music_search() {
-
-}
 
 void music_add(struct musica *m) {
 
@@ -92,9 +89,7 @@ void music_add(struct musica *m) {
     music_input(m->titulo);
 }
 
-void music_edit() {
 
-}
 
 void music_remove(struct musica *m) {
 
