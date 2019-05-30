@@ -1,6 +1,13 @@
 #ifndef IAPG_PROJECT_PROJECT_H
 #define IAPG_PROJECT_PROJECT_H
 
+#include <stdio.h>
+#include <string.h>
+#include <locale.h>
+
+
+
+
 
 #define TAM_NOME 50        // tamanho max de char na string - MACRO
 #define TAM_VECTOR 50    // numero de musicas que podem ser armazenadas em memoria
