@@ -1,1 +1,3 @@
-artistas: 0
+artistas: 1
+nome: Toy
+nacionalidade: Portugues

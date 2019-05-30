@@ -1,30 +1,23 @@
 #include "project.h"
 
 
-int menu_edit(struct musica *m) {                   //struct musica *m ?
+int menu_edit_remove_music(struct musica *m) {
 
     char op;
     do {
+        music_print(m);
         printf("Escolha uma opcao entre as possiveis: \n");
-        printf(" [1]Editar Titulo \n");
-        printf(" [3]Editar Album \n");
-        printf(" [4]Editar Naturalidade \n");
-        printf(" [5]Editar Ano \n");
+        printf(" [1]Editar \n");
+        printf(" [2]Remover \n");
         printf(" [S]Sair \n");
         fflush(stdin);
         scanf("%c", &op);
         switch (op) {
             case '1':
-                music_edit(m);
+                menu_edit(m);
                 break;
-            case '3':
-
-                break;
-            case '4':
-
-                break;
-            case '5':
-
+            case '2':
+                music_remove(m);
                 break;
             case 's':
             case 'S':
@@ -42,36 +35,23 @@ int menu_edit(struct musica *m) {                   //struct musica *m ?
     return 0;
 }
 
-
-
-int menu_artist_edit(struct artista *a) {                   //struct musica *m ?
+int menu_edit_remove_artist(struct artista *a) {
 
     char op;
     do {
+        artist_print(a);
         printf("Escolha uma opcao entre as possiveis: \n");
-        printf(" [1]Editar Titulo \n");
-        printf(" [2]Editar Artista \n");
-        printf(" [3]Editar Album \n");
-        printf(" [4]Editar Naturalidade \n");
-        printf(" [5]Editar Ano \n");
+        printf(" [1]Editar \n");
+        printf(" [2]Remover \n");
         printf(" [S]Sair \n");
         fflush(stdin);
         scanf("%c", &op);
         switch (op) {
             case '1':
-                artist_edit(a);
+                menu_artist_edit(a);
                 break;
             case '2':
-                //artist_edit();
-                break;
-            case '3':
-
-                break;
-            case '4':
-
-                break;
-            case '5':
-
+                //music_remove(a);
                 break;
             case 's':
             case 'S':
