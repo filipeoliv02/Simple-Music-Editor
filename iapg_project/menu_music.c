@@ -105,14 +105,11 @@ void music_remove(){
 
 }
 
-
-
 void music_list() {
     for (int i = 0; i < music_num; i++) {
         music_print(&vec_musicas[i]);
     }
 }
-
 
 void music_load() {
     FILE *fp;
