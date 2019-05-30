@@ -1,0 +1,13 @@
+artistas:6
+nome: U2
+nacionalidade: Irlanda
+nome: Rui Veloso
+nacionalidade: Portugal
+nome: Ed Sheeran
+nacionalidade: Inglaterra
+nome: Maroon 5
+nacionalidade: America
+nome: Bon Jovi
+nacionalidade: America
+nome: Adele
+nacionalidade: Inglaterra

@@ -4,18 +4,9 @@
 #include <locale.h>
 
 
-#define TAM_NOME 50        // tamanho max de char na string - MACRO
-#define TAM_VECTOR 50    // numero de musicas que podem ser armazenadas em memoria
 
 
-// estruturas permitem definir novos tipos de dados - tipo de dados neste caso ira ter o nome musica - e composto por duas strings, titulo e artista
-struct musica {
-    char titulo[TAM_NOME];
-    char artista[TAM_NOME];
-};
 
-
-struct musica vec_musicas[TAM_VECTOR];    // inicializa-se com a estrutura criada acima um vector de musicas
 int num_musicas = 0;            // numero de musicas no vector
 char ficheiro_musicas[] = "musicas.txt";// nome do ficheiro
 

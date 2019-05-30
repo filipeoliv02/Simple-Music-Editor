@@ -3,17 +3,9 @@
 #include <stdio.h>
 
 
-#define TAM_NOME 50        // tamanho max de char na string - MACRO
-#define TAM_VECTOR 50    // numero de musicas que podem ser armazenadas em memoria
 
 
-// estruturas permitem definir novos tipos de dados - tipo de dados neste caso ira ter o nome musica - e composto por duas strings, titulo e artista
-struct musica {
-    char titulo[TAM_NOME];
-    char artista[TAM_NOME];
-};
 
-struct musica vec_musicas[TAM_VECTOR];    // inicializa-se com a estrutura criada acima um vector de musicas
 int artist_num = 0;            // numero de musicas no vector
 char artist_file[] = "artistas.txt";// nome do ficheiro
 
@@ -40,7 +32,7 @@ int menu_artist() {
                 break;
             case '2':
                 printf("\n Insira Nome Artista \n");
-                artist_add(&vec_musicas[artist_num]);
+                artist_add(&vec_artistas[artist_num]);
                 artist_num++;
                 break;
             case '3':
@@ -76,20 +68,20 @@ int menu_artist() {
 
 }
 
-    void artist_print(struct musica *m) {
-        printf("%s\n", m->artista);
+    void artist_print(struct artista *m) {
+        printf("%s\n", m->nome);
     }
 
     void artist_search() {
 
     }
 
-    void artist_add(struct musica *m) {
+    void artist_add(struct artista *m) {
 
         getchar();
         printf("Insira o nome do artista:\n");
 
-        artist_input(m->artista);
+        artist_input(m->nome);
 
     }
 
@@ -114,7 +106,7 @@ void artist_input(char *temp) {
 
 void artist_list() {
     for (int i = 0; i < artist_num; i++) {
-        artist_print(&vec_musicas[i]);
+        artist_print(&vec_artistas[i]);
     }
 }
 
@@ -130,10 +122,10 @@ void artist_load() {
         for (i = 0; i < artist_num; i++) {
             fgets(linha, sizeof(linha), fp);            // titulo
             linha[strlen(linha) - 1] = 0;                // retira quebra de linha
-            strcpy(vec_musicas[i].titulo, &linha[8]);        // titulo começa no 8º char
+            strcpy(vec_artistas[i].nome, &linha[8]);        // titulo começa no 8º char
             fgets(linha, sizeof(linha), fp);            // titulo
             linha[strlen(linha) - 1] = 0;                // retira quebra de linha
-            strcpy(vec_musicas[i].artista, &linha[8]);        // titulo começa no 8º char
+            strcpy(vec_artistas[i].nacionalidade, &linha[8]);        // titulo começa no 8º char
 
         }
         fclose(fp);
@@ -147,8 +139,8 @@ void artist_save() {
     if (fp != NULL) {
         fprintf(fp, "musicas: %d\n", artist_num);
         for (i = 0; i < artist_num; i++) {
-            fprintf(fp, "titulo: %s\n", vec_musicas[i].titulo);
-            fprintf(fp, "artista: %s\n", vec_musicas[i].artista);
+            fprintf(fp, "titulo: %s\n", vec_artistas[i].nome);
+                fprintf(fp, "artista: %s\n", vec_artistas[i].nacionalidade);
         }
         fclose(fp);
     }
