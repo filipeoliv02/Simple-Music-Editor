@@ -79,7 +79,7 @@ void music_print(struct musica *m){
 }
 
 
-void le_input(char *temp) {
+void music_input(char *temp) {
     char input[TAM_NOME];
     /*
     * POR FAZER - esta funcao deve ler uma string escrita pelo utilizador no terminal, e guarda-la em temp
@@ -97,12 +97,7 @@ void music_add(struct musica *m) {
     getchar();
     printf("Insira o titulo da musica:\n");
 
-    le_input(m->titulo);
-
-    printf("Insira o artista:\n");
-
-    le_input(m->artista);
-
+    music_input(m->titulo);
 
 }
 

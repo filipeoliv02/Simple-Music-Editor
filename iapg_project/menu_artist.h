@@ -9,4 +9,6 @@ void artist_remove();
 void artist_edit();
 void artist_load();
 void artist_print();
+void artist_save();
+void artist_input();
 #endif

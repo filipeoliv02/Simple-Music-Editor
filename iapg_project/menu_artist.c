@@ -40,7 +40,8 @@ int menu_artist() {
                 break;
             case '2':
                 printf("\n Insira Nome Artista \n");
-                artist_add();
+                artist_add(&vec_musicas[artist_num]);
+                artist_num++;
                 break;
             case '3':
                 printf("\n Insira Nome Artista \n");
@@ -55,7 +56,7 @@ int menu_artist() {
                 printf("\n Ficheiro Carregado com Sucesso \n");
                 break;
             case '6':
-               music_save();
+               artist_save();
                 printf("\n Ficheiro Gravado com Sucesso \n");
                 break;
             case 's':
@@ -83,9 +84,16 @@ int menu_artist() {
 
     }
 
-    void artist_add(){
+    void artist_add(struct musica *m) {
+
+        getchar();
+        printf("Insira o nome do artista:\n");
+
+        artist_input(m->artista);
 
     }
+
+
 
     void artist_remove(){
 
@@ -95,7 +103,14 @@ int menu_artist() {
 
     }
 
-
+void artist_input(char *temp) {
+    char input[TAM_NOME];
+    /*
+    * POR FAZER - esta funcao deve ler uma string escrita pelo utilizador no terminal, e guarda-la em temp
+    */
+    scanf("%s", input);
+    strcpy(temp,input);
+}
 
 void artist_list() {
     for (int i = 0; i < artist_num; i++) {
@@ -120,6 +135,20 @@ void artist_load() {
             linha[strlen(linha) - 1] = 0;                // retira quebra de linha
             strcpy(vec_musicas[i].artista, &linha[8]);        // titulo começa no 8º char
 
+        }
+        fclose(fp);
+    }
+}
+
+void artist_save() {
+    FILE *fp;
+    int i;
+    fp = fopen(artist_file, "w");
+    if (fp != NULL) {
+        fprintf(fp, "musicas: %d\n", artist_num);
+        for (i = 0; i < artist_num; i++) {
+            fprintf(fp, "titulo: %s\n", vec_musicas[i].titulo);
+            fprintf(fp, "artista: %s\n", vec_musicas[i].artista);
         }
         fclose(fp);
     }
