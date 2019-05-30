@@ -21,7 +21,7 @@ int menu_search() {
                 music_input(pesquisa);
                 for(int i=0;i<music_num;i++){
                     if(strcmp(vec_musicas[i].titulo,pesquisa)==0)
-                        menu_temp(&vec_musicas[i]);
+                        menu_er(&vec_musicas[i]);
 
                 }
                 break;
