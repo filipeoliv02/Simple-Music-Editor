@@ -45,7 +45,8 @@ int menu_music() {
                 break;
             case '3':
                 printf("\n Insira o nome da Musica \n");
-                music_add();
+                music_add(&vec_musicas[music_num]);
+                music_num++; // aumenta o numero de musicas no vector
                 break;
             case '4':
                 printf("\n Insira o nome da Musica \n");
@@ -60,7 +61,7 @@ int menu_music() {
                 printf("\n Ficheiro Carregado com Sucesso \n");
                 break;
             case '7':
-                gravar_musicas_para_ficheiro();
+                music_save();
                 printf("\n Ficheiro Gravado com Sucesso \n");
                 break;
             case 's':
@@ -87,7 +88,17 @@ void music_search(){
 
 }
 
-void music_add(){
+void music_add(struct musica *m) {
+
+    getchar();
+    printf("Insira o titulo da musica:\n");
+
+    le_input(m->titulo);
+
+    printf("Insira o artista:\n");
+
+    le_input(m->artista);
+
 
 }
 

@@ -31,6 +31,7 @@ int menu_pr() {
         printf(" [2] Musicas \n");
         printf(" [3] Artistas \n");
         printf(" [4] Carregar informacao do ficheiro\n");
+        printf(" [5] Guardar informacao no ficheiro\n");
         printf(" [s] Sair\n");
         fflush(stdin);
         scanf("%c", &opcao);
@@ -51,7 +52,11 @@ int menu_pr() {
             case '4':
                 printf("\n Ficheiro carregado com sucesso \n");
                 carregar_musicas_do_ficheiro();
-
+                break;
+            case '5':
+                printf("\n Ficheiro guardado com sucesso \n");
+                music_save();
+                break;
             case 's':
             case 'S':
                 break;
@@ -93,22 +98,10 @@ void lista_todas_musicas() {
     }
 }
 
-void ler_nova_musica(struct musica *m) {
-
-    getchar();
-    printf("Insira o titulo da musica:\n");
-
-    le_input(m->titulo);
-
-    printf("Insira o artista:\n");
-
-    le_input(m->artista);
 
 
-}
 
-
-void gravar_musicas_para_ficheiro() {
+void music_save() {
     FILE *fp;
     int i;
     fp = fopen(ficheiro_musicas, "w");

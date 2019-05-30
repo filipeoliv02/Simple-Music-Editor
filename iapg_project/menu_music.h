@@ -8,4 +8,5 @@ void music_edit();
 void music_remove();
 void music_print();
 void music_load();
+void ler_nova_musica();
 #endif

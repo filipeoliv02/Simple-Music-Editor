@@ -9,7 +9,7 @@ void imprime_musica();
 
 void ler_nova_musica();
 
-void gravar_musicas_para_ficheiro();
+void music_save();
 
 void carregar_musicas_do_ficheiro();
 

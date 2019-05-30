@@ -60,7 +60,7 @@ int menu_artist() {
                 printf("\n Ficheiro Carregado com Sucesso \n");
                 break;
             case '7':
-                gravar_musicas_para_ficheiro();
+               music_save();
                 printf("\n Ficheiro Gravado com Sucesso \n");
                 break;
             case 's':
