@@ -11,7 +11,7 @@ void ler_nova_musica();
 
 void gravar_ficheiro();
 
-void carregar_musicas_do_ficheiro();
+void carregar_ficheiro();
 
 
 

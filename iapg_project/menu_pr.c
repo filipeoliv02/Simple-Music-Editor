@@ -51,7 +51,7 @@ int menu_pr() {
                 break;
             case '4':
                 printf("\n Ficheiro carregado com sucesso \n");
-                carregar_musicas_do_ficheiro();
+                carregar_ficheiro();
                 break;
             case '5':
                 printf("\n Ficheiro guardado com sucesso \n");
@@ -107,7 +107,7 @@ void gravar_ficheiro() {
     }
 }
 
-void carregar_musicas_do_ficheiro() {
+void carregar_ficheiro() {
     FILE *fp;
     int i = 0;
     char linha[TAM_NOME];
