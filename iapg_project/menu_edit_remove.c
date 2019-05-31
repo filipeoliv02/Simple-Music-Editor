@@ -5,19 +5,23 @@ int menu_edit_remove_music(struct musica *m) {
 
     char op;
     do {
-        music_print(m);
         printf("Escolha uma opcao entre as possiveis: \n");
-        printf(" [1]Editar \n");
-        printf(" [2]Remover \n");
+        printf(" [1]Ver Legendas \n");
+        printf(" [2]Editar \n");
+        printf(" [3]Remover \n");
         printf(" [S]Sair \n");
         fflush(stdin);
         scanf("%c", &op);
         switch (op) {
             case '1':
+                music_print(m);
+
+                break;
+            case '2':
                 music_edit(m);
                 music_save();
                 break;
-            case '2':
+            case '3':
                 music_remove(m);
                 music_save();
                 break;
