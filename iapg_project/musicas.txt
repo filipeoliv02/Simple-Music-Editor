@@ -2,9 +2,9 @@ musicas: 6
 titulo: Where the Streets Have No Name
 artista: 1
 titulo: Porto Sentido
-artista: Rui Veloso
+artista: toy
 titulo: Beautiful day
-artista: U2
+artista: toy
 titulo: qqweerrtw
 artista: Ed Sheeran
 titulo: Rolling in the Deep

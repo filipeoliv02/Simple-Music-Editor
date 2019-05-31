@@ -1,5 +1,5 @@
 artistas: 3
-nome: qwertyu
+nome: toy
 nacionalidade: qwertyuiop
 nome: qqqqqqqqq
 nacionalidade: wwwwwwwww
