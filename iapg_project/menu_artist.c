@@ -90,7 +90,7 @@ void artist_remove() {
 void artist_edit(struct artista *a) {
     getchar();
 
-    printf("Insert the new artist's name :\n");
+    printf("Insira o novo Nome para o Artista :\n");
     artist_input(a->nome);
 
     printf("Insira a nacionalidade:\n");

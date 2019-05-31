@@ -76,7 +76,7 @@ void music_edit(struct musica*m) {
 
 
     getchar();
-    printf("Insert the new music's title :\n");
+    printf("Insira o novo Titulo para a Musica :\n");
 
     music_input(m->titulo);
 }

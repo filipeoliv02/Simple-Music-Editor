@@ -1,6 +1,6 @@
 artistas: 4
-nome: 0000
-nacionalidade: 1111
+nome: jose
+nacionalidade: pt
 nome: qwertyu
 nacionalidade: qwertyuiop
 nome: qqqqqqqqq
