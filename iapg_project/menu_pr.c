@@ -22,7 +22,7 @@ char ficheiro_musicas[] = "musicas.txt";// nome do ficheiro
         switch (opcao) {
             case '1':
                 printf("\n Todas as Informacoes \n");
-                music_load();                 //carrega o ficheiro musicas.txt
+                music_load();                 //carrega o ficheiro musicas.txt - WORKING
                 lista_todas_musicas();
                 break;
             case '2':

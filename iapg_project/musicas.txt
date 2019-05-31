@@ -1,11 +1,9 @@
-musicas: 5
+musicas: 4
 titulo: Rolling in the Deep
 artista: Adele
 titulo: Always
 artista: Bon Jovi
 titulo: Photograph
 artista: Ed Sheeran
-titulo: Maroon 5
-artista: Animals
 titulo: Beautiful day
 artista: U2

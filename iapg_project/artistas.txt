@@ -1,7 +1,9 @@
-artistas: 3
-nome: brinquedo
-nacionalidade: tuga
-nome: qqqqqqqqq
-nacionalidade: wwwwwwwww
-nome: aaaaaaaaaaaaaaaaaaaaaaa
-nacionalidade: ssssssssssssssssssssssss
+artistas: 4
+nome: Adele
+nacionalidade: Inglaterra
+nome: Bon Jovi
+nacionalidade: America
+nome: Ed Sheeran
+nacionalidade: Inglaterra
+nome: U2
+nacionalidade: Irlanda
