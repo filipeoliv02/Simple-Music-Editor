@@ -22,21 +22,21 @@ char ficheiro_musicas[] = "musicas.txt";// nome do ficheiro
         switch (opcao) {
             case '1':
                 printf("\n Todas as Informacoes \n");
-                music_load();                 //carrega o ficheiro musicas.txt - WORKING
-                lista_todas_musicas();
+                music_load();                 //carrega o ficheiro musicas.txt  WORKING
+                lista_todas_musicas();        //Lista as informacoes contidas em musicas.txt ordenando-as numericamente   WORKING
                 break;
             case '2':
                 printf("\n Musicas \n");
-                music_load();                 //carrega o ficheiro musicas.txt
-                menu_music();                 //abre o menu de opcoes das musicas
+                music_load();                 //carrega o ficheiro musicas.txt   WORKING
+                menu_music();                 //abre o menu de opcoes das musicas   WORKING
                 break;
             case '3':
                 printf("\n Artistas\n");
-                artist_load();                //carrega o ficheiro artistas.txt
-                menu_artist();                //abre o menu de opcoes dos artistas
+                artist_load();                //carrega o ficheiro artistas.txt   WORKING
+                menu_artist();                //abre o menu de opcoes dos artistas  WORKING
                 break;
             case '4':
-                menu_search();                //abre o menu de pesquisa
+                menu_search();                //abre o menu de pesquisa         WORKING
                 break;
             case 's':
             case 'S':
@@ -57,13 +57,13 @@ char ficheiro_musicas[] = "musicas.txt";// nome do ficheiro
 
 
 
-void imprime_musica (struct musica *m) {                        //imprime a musica contida na estrutura - artista + titulo
+void imprime_musica (struct musica *m) {                        //imprime a musica contida na estrutura - artista + titulo  WORKING
 
         printf("%s - %s \n", m->artista, m->titulo);
 }
 
 
-void lista_todas_musicas() {                            //lista a informacao contida para todas as musicas no ficheiro musicas.txt
+void lista_todas_musicas() {                            //lista a informacao contida para todas as musicas no ficheiro musicas.txt  WORKING
     for (int i = 0; i < music_num; i++) {
         printf("[%d] ",i+1);
         imprime_musica(&vec_musicas[i]);
