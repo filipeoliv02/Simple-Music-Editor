@@ -50,7 +50,6 @@ int menu_edit_remove_artist(struct artista *a) {
         switch (op) {
             case '1':
                 artist_edit(a);
-
                 artist_save();
                 break;
             case '2':

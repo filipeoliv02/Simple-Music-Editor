@@ -20,10 +20,21 @@ int artist_num; // numero de musicas no vector
     char nacionalidade[TAM_NOME];
 }ARTISTA;
 
+
+ struct lrc{
+     int min;
+     int seg;
+     int cs;
+     char texto[100];
+ };
+
+
 struct musica {             // estruturas permitem definir novos tipos de dados - tipo de dados neste caso ira ter o nome musica - e composto por duas strings e uma estrutura, titulo e artista
     char titulo[TAM_NOME];
     char artista[TAM_NOME];
     char ano[TAM_NOME];
+    struct lrc letras[100];
+    int num_letras;
 
     ARTISTA cantor;
 };
@@ -72,5 +83,9 @@ int menu_search();
 int menu_edit_remove_music(struct musica *m);
 int menu_edit_remove_artist(struct artista *a);
 int menu_edit(struct musica *m);
+
+
+
+void lrc_load(struct musica*m);
 
 #endif

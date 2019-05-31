@@ -12,7 +12,7 @@ char ficheiro_musicas[] = "musicas.txt";// nome do ficheiro
     char opcao;
     do {
         printf("Escolha uma opcao entre as possiveis: \n");
-        printf(" [1] Listar Informacao \n");
+        printf(" [1] Listar Informacao \n");                        //Lista as opçoes disponiveis no meunu principal assim como a opçao  para selecionar
         printf(" [2] Musicas \n");
         printf(" [3] Artistas \n");
         printf(" [4] Procurar \n");
@@ -22,21 +22,21 @@ char ficheiro_musicas[] = "musicas.txt";// nome do ficheiro
         switch (opcao) {
             case '1':
                 printf("\n Todas as Informacoes \n");
-                music_load();
+                music_load();                 //carrega o ficheiro musicas.txt
                 lista_todas_musicas();
                 break;
             case '2':
                 printf("\n Musicas \n");
-                music_load();
-                menu_music();
+                music_load();                 //carrega o ficheiro musicas.txt
+                menu_music();                 //abre o menu de opcoes das musicas
                 break;
             case '3':
                 printf("\n Artistas\n");
-                artist_load();
-                menu_artist();
+                artist_load();                //carrega o ficheiro artistas.txt
+                menu_artist();                //abre o menu de opcoes dos artistas
                 break;
             case '4':
-                menu_search();
+                menu_search();                //abre o menu de pesquisa
                 break;
             case 's':
             case 'S':
@@ -57,54 +57,16 @@ char ficheiro_musicas[] = "musicas.txt";// nome do ficheiro
 
 
 
-void imprime_musica (struct musica *m) {
-    /*
-    * POR FAZER - esta funcao deve imprimir a musica contida na estrutura - titulo + artista
-    */
-    printf("%s - %s \n", m->artista, m->titulo);
+void imprime_musica (struct musica *m) {                        //imprime a musica contida na estrutura - artista + titulo
+
+        printf("%s - %s \n", m->artista, m->titulo);
 }
 
 
-void lista_todas_musicas() {
+void lista_todas_musicas() {                            //lista a informacao contida para todas as musicas no ficheiro musicas.txt
     for (int i = 0; i < music_num; i++) {
         printf("[%d] ",i+1);
         imprime_musica(&vec_musicas[i]);
     }
 }
 
-
-
-
-void gravar_ficheiro() {
-    FILE *fp;
-    int i;
-    fp = fopen(ficheiro_musicas, "w");
-    if (fp != NULL) {
-        fprintf(fp, "musicas: %d\n", music_num);
-        for (i = 0; i < music_num; i++) {
-            fprintf(fp, "titulo: %s\n", vec_musicas[i].titulo);
-            fprintf(fp, "artista: %s\n", vec_musicas[i].artista);
-        }
-        fclose(fp);
-    }
-}
-
-void carregar_ficheiro() {
-    FILE *fp;
-    int i = 0;
-    char linha[TAM_NOME];
-    music_num = 0;
-    fp = fopen(ficheiro_musicas, "r");
-    if (fp != NULL) {
-        fscanf(fp, "%*s %d\n", &music_num);            // ignore the string and store only the int
-        for (i = 0; i < music_num; i++) {
-            fgets(linha, sizeof(linha), fp);            // titulo
-            linha[strlen(linha) - 1] = 0;                // retira quebra de linha
-            strcpy(vec_musicas[i].titulo, &linha[8]);        // titulo começa no 8º char
-            fgets(linha, sizeof(linha), fp);            // artista
-            linha[strlen(linha) - 1] = 0;                // retira quebra de linha
-            strcpy(vec_musicas[i].artista, &linha[9]);        // artista começa no 9º char
-        }
-        fclose(fp);
-    }
-}

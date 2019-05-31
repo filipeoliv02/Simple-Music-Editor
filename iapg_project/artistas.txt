@@ -1,6 +1,6 @@
 artistas: 3
-nome: toy
-nacionalidade: qwertyuiop
+nome: brinquedo
+nacionalidade: tuga
 nome: qqqqqqqqq
 nacionalidade: wwwwwwwww
 nome: aaaaaaaaaaaaaaaaaaaaaaa
