@@ -149,3 +149,18 @@ void artist_save() {
         fclose(fp);
     }
 }
+
+
+void artist_search(){
+    char pesquisa[50];
+    printf("\n Insira o nome do Artista \n");
+
+    artist_input(pesquisa);
+    for(int i=0;i<artist_num;i++){
+
+
+
+        if(strcmp(vec_artistas[i].nome,pesquisa)==0)
+            menu_edit_remove_artist(&vec_artistas[i]);
+    }
+}

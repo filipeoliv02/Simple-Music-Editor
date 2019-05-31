@@ -132,18 +132,31 @@ void music_load() {
     }
 }
 
-    void music_save() {
-        FILE *fp;
-        int i;
-        fp = fopen(music_file, "w");
-        if (fp != NULL) {
-            fprintf(fp, "musicas: %d\n", music_num);
-            for (i = 0; i < music_num; i++) {
-                fprintf(fp, "titulo: %s\n", vec_musicas[i].titulo);
-                fprintf(fp, "artista: %s\n", vec_musicas[i].artista);
-            }
-            fclose(fp);
+void music_save() {
+    FILE *fp;
+    int i;
+    fp = fopen(music_file, "w");
+    if (fp != NULL) {
+        fprintf(fp, "musicas: %d\n", music_num);
+        for (i = 0; i < music_num; i++) {
+            fprintf(fp, "titulo: %s\n", vec_musicas[i].titulo);
+            fprintf(fp, "artista: %s\n", vec_musicas[i].artista);
         }
+        fclose(fp);
     }
+}
 
 
+void music_search() {
+    char pesquisa[50];
+    printf("\n Insira o Titulo da Musica \n");
+
+    music_input(pesquisa);
+
+    for (int i = 0; i < music_num; i++) {
+        if (strcmp(vec_musicas[i].titulo, pesquisa) == 0)
+
+
+            menu_edit_remove_music(&vec_musicas[i]);
+    }
+}

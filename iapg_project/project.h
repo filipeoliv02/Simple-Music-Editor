@@ -35,14 +35,13 @@ struct artista vec_artistas[TAM_VECTOR];    // inicializa-se com a estrutura cri
 //MENU_PRINCIPAL
 int menu_pr();
 void lista_todas_musicas();
-void imprime_musica();
+void imprime_musica(struct musica *m);
 void gravar_ficheiro();
 void carregar_ficheiro();
 
 //MENU_MUSIC
 int menu_music();
 void music_list();
-void music_search();
 void music_add(struct musica *m);
 void music_edit(struct musica *m);
 void music_remove(struct musica *m);
@@ -50,6 +49,7 @@ void music_print(struct musica *m);
 void music_load();
 void music_save();
 void music_input(char *temp);
+void music_search();
 
 //MENU_ARTIST
 int menu_artist();

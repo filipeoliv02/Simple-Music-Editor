@@ -1,4 +1,4 @@
-musicas: 7
+musicas: 6
 titulo: Where the Streets Have No Name
 artista: 1
 titulo: Porto Sentido
@@ -7,8 +7,6 @@ titulo: Beautiful day
 artista: U2
 titulo: qqweerrtw
 artista: Ed Sheeran
-titulo: OLa
-artista: Maroon 5
 titulo: Rolling in the Deep
 artista: Adele
 titulo:  Adel

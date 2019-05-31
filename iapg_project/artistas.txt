@@ -1,6 +1,4 @@
-artistas: 4
-nome: joao
-nacionalidade: tuga
+artistas: 3
 nome: qwertyu
 nacionalidade: qwertyuiop
 nome: qqqqqqqqq

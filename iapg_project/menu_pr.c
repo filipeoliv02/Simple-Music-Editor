@@ -8,7 +8,7 @@ char ficheiro_musicas[] = "musicas.txt";// nome do ficheiro
 
 
 
-int menu_pr() {
+    int menu_pr() {
     char opcao;
     do {
         printf("Escolha uma opcao entre as possiveis: \n");
@@ -16,34 +16,27 @@ int menu_pr() {
         printf(" [2] Musicas \n");
         printf(" [3] Artistas \n");
         printf(" [4] Procurar \n");
-        printf(" [5] Carregar informacao do ficheiro\n");
-        printf(" [6] Guardar informacao no ficheiro\n");
         printf(" [s] Sair\n");
         fflush(stdin);
         scanf("%c", &opcao);
         switch (opcao) {
             case '1':
                 printf("\n Todas as Informacoes \n");
+                music_load();
                 lista_todas_musicas();
                 break;
             case '2':
                 printf("\n Musicas \n");
+                music_load();
                 menu_music();
                 break;
             case '3':
                 printf("\n Artistas\n");
+                artist_load();
                 menu_artist();
                 break;
             case '4':
                 menu_search();
-                break;
-            case '5':
-                printf("\n Ficheiro carregado com sucesso \n");
-                carregar_ficheiro();
-                break;
-            case '6':
-                printf("\n Ficheiro guardado com sucesso \n");
-                gravar_ficheiro();
                 break;
             case 's':
             case 'S':

@@ -19,6 +19,7 @@ int menu_edit_remove_music(struct musica *m) {
                 break;
             case '2':
                 music_remove(m);
+                music_save();
                 break;
             case 's':
             case 'S':
@@ -54,6 +55,7 @@ int menu_edit_remove_artist(struct artista *a) {
                 break;
             case '2':
                 artist_remove(a);
+                artist_save();
                 break;
             case 's':
             case 'S':

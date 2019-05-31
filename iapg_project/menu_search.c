@@ -18,29 +18,12 @@ int menu_search() {
         switch (op) {
             case '1':
                 music_load();
-                printf("\n Insira o Titulo da Musica \n");
+                music_search();
 
-                music_input(pesquisa);
-                for(int i=0;i<music_num;i++){
-                    if(strcmp(vec_musicas[i].titulo,pesquisa)==0)
-
-
-                        menu_edit_remove_music(&vec_musicas[i]);
-                }
                 break;
             case '2':
                 artist_load();
-                printf("\n Insira o nome do Artista \n");
-
-                artist_input(pesquisa);
-                for(int i=0;i<artist_num;i++){
-
-
-                    printf("\n TEST FOR \n");
-
-                    if(strcmp(vec_artistas[i].nome,pesquisa)==0)
-                        menu_edit_remove_artist(&vec_artistas[i]);
-                }
+                artist_search();
                 break;
             case '3':
                 printf("\n Insira o Ano da Musica \n");
