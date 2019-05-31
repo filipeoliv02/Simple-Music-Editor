@@ -19,6 +19,7 @@ int menu_search() {
             case '1':
                 music_load();
                 printf("\n Insira o Titulo da Musica \n");
+
                 music_input(pesquisa);
                 for(int i=0;i<music_num;i++){
                     if(strcmp(vec_musicas[i].titulo,pesquisa)==0)

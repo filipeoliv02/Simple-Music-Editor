@@ -83,8 +83,19 @@ void artist_add(struct artista *a) {
 
 }
 
-void artist_remove() {
+void artist_remove(struct artista *a) {
 
+    int existe = 0;
+    for (int i = 0; i < artist_num; i++) {
+
+        if (strcmp(vec_artistas[i].nome, a->nome) == 0 || existe == 1) {
+            existe = 1;
+            vec_artistas[i] = vec_artistas[i + 1];
+
+
+        }
+    }
+    artist_num--;
 }
 
 void artist_edit(struct artista *a) {

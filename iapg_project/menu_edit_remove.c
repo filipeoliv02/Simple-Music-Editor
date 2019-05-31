@@ -53,7 +53,7 @@ int menu_edit_remove_artist(struct artista *a) {
                 artist_save();
                 break;
             case '2':
-                //music_remove(a);
+                artist_remove(a);
                 break;
             case 's':
             case 'S':

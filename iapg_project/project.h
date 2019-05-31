@@ -56,7 +56,7 @@ int menu_artist();
 void artist_list();
 void artist_search();
 void artist_add(struct artista *a);
-void artist_remove();
+void artist_remove(struct artista *a);
 void artist_edit(struct artista *a);
 void artist_load();
 void artist_print(struct artista *a);
