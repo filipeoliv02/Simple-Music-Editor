@@ -1,11 +1,11 @@
 musicas: 5
-titulo: Where the Streets Have No Name
-artista: Bon Jovi
-titulo: Porto Sentido
-artista: toy
-titulo: Beautiful day
-artista: U2
-titulo: Photograph
-artista: Ed Sheeran
 titulo: Rolling in the Deep
 artista: Adele
+titulo: Always
+artista: Bon Jovi
+titulo: Photograph
+artista: Ed Sheeran
+titulo: Maroon 5
+artista: Animals
+titulo: Beautiful day
+artista: U2
