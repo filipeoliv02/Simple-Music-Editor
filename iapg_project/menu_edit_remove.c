@@ -6,7 +6,7 @@ int menu_edit_remove_music(struct musica *m) {
     char op;
     do {
         printf("Escolha uma opcao entre as possiveis: \n");
-        printf(" [1]Ver Legendas \n");
+        printf(" [1]Ver Letra \n");
         printf(" [2]Editar \n");
         printf(" [3]Remover \n");
         printf(" [S]Sair \n");
@@ -14,8 +14,10 @@ int menu_edit_remove_music(struct musica *m) {
         scanf("%c", &op);
         switch (op) {
             case '1':
+
                 music_print(m);
 
+                lrc_print();
                 break;
             case '2':
                 music_edit(m);
@@ -74,4 +76,13 @@ int menu_edit_remove_artist(struct artista *a) {
     } while (op != 's' && op != 'S' && op != '2');
 
     return 0;
+}
+
+
+void lrc_print(struct musica *m) {
+    printf("\n \n");
+    for(int i=0;i < m->num_letras; i++){
+        printf("%s \n", m->letras[i].texto);
+    }
+
 }

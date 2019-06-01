@@ -9,6 +9,7 @@
 
 
 
+
 #define TAM_NOME 50        // tamanho max de char na string - MACRO
 #define TAM_VECTOR 50    // numero de musicas que podem ser armazenadas em memoria
 
@@ -93,5 +94,8 @@ int menu_edit(struct musica *m);
 
 
 void lrc_load(struct musica*m);
+
+
+void lrc_print();
 
 #endif

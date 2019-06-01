@@ -1,8 +1,0 @@
-void music_print(struct musica *m) {
-    printf("%s - %s", m->titulo, m->album);
-    for(int i=0;i < m->num_letras; i++){
-        printf("%s \n", m->letras[i].texto);
-    }
-}
-
-imprime todas as letras das musica
