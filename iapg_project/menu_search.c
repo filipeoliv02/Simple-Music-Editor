@@ -27,10 +27,12 @@ int menu_search() {
                 break;
             case '3':
                 printf("\n Insira o Ano da Musica \n");
-
+                year_search();
                 break;
             case '4':
                 printf("\n Insira o nome do Album \n");
+                album_search();
+
                 break;
             case 's':
             case 'S':

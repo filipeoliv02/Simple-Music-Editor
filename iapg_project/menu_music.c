@@ -47,10 +47,7 @@ int menu_music() {
 }
 
 void music_print(struct musica *m) {
-    printf("%s \n \n", m->titulo);
-    for(int i=0;i < m->num_letras; i++){
-        printf("%s \n", m->letras[i].texto);
-    }
+    printf("%s - %s (%s)", m->titulo, m->album,m->ano);
 }
 
 
@@ -108,12 +105,12 @@ void music_remove(struct musica *m) {
     }
     music_num--;
 }
-    void music_list() {
-        for (int i = 0; i < music_num; i++) {
-            printf("\n [%d] ", i + 1);
-            music_print(&vec_musicas[i]);
-        }
+void music_list() {
+    for (int i = 0; i < music_num; i++) {
+        printf("\n [%d] ", i + 1);
+        music_print(&vec_musicas[i]);
     }
+}
 
 void music_load() {
     FILE *fp;
@@ -135,7 +132,7 @@ void music_load() {
             strcpy(vec_musicas[i].album, &linha[7]);        // titulo começa no 7º char
             fgets(linha, sizeof(linha), fp);            // artista
             linha[strlen(linha) - 1] = 0;                // retira quebra de linha
-            strcpy(vec_musicas[i].ano, &linha[4]);       // artista começa no 4º char
+            strcpy(vec_musicas[i].ano, &linha[5]);       // artista começa no 5º char
 
             lrc_load(&vec_musicas[i]);
         }

@@ -12,8 +12,6 @@ int menu_artist() {
         printf("Escolha uma opcao entre as possiveis: \n");
         printf(" [1]Listar Artistas \n");
         printf(" [2]Adicionar Artista\n");
-        printf(" [5]Carregar o ficheiro\n");
-        printf(" [6]Gravar no ficheiro\n");
         printf(" [S]Sair \n");
         fflush(stdin);
         scanf("%c", &op);
@@ -27,14 +25,6 @@ int menu_artist() {
                 artist_add(&vec_artistas[artist_num]);
                 artist_num++;
                 artist_save();
-                break;
-            case '5':
-                artist_load();
-                printf("\n Ficheiro Carregado com Sucesso \n");
-                break;
-            case '6':
-                artist_save();
-                printf("\n Ficheiro Gravado com Sucesso \n");
                 break;
             case 's':
             case 'S':

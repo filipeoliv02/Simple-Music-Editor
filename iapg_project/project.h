@@ -79,6 +79,11 @@ int menu_artist_edit(struct artista *a);
 //MENU_SEARCH
 int menu_search();
 
+//MENU_YEAR
+void year_search();
+
+//MENU_ALBUM
+void album_search();
 
 
 int menu_edit_remove_music(struct musica *m);
