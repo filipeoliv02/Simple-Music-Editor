@@ -32,6 +32,7 @@ int artist_num; // numero de musicas no vector
 struct musica {             // estruturas permitem definir novos tipos de dados - tipo de dados neste caso ira ter o nome musica - e composto por duas strings e uma estrutura, titulo e artista
     char titulo[TAM_NOME];
     char artista[TAM_NOME];
+    char album[TAM_NOME];
     char ano[TAM_NOME];
     struct lrc letras[100];
     int num_letras;

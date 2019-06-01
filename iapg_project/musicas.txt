@@ -1,9 +1,17 @@
 musicas: 4
 titulo: Rolling in the Deep
 artista: Adele
+album: 21
+ano: 2011
 titulo: Always
 artista: Bon Jovi
+album: Cross Road
+ano: 1995
 titulo: Photograph
 artista: Ed Sheeran
+album: X
+ano: 2014
 titulo: Beautiful day
 artista: U2
+album: All That You Can't Leave Behind
+ano: 2000

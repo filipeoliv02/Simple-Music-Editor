@@ -16,29 +16,19 @@ int menu_music() {
         printf("Escolha uma opcao entre as possiveis: \n");
         printf(" [1]Listar Musicas \n");
         printf(" [2]Adicionar Musica \n");
-        printf(" [5]Carregar o ficheiro\n");
-        printf(" [6]Gravar no ficheiro\n");
         printf(" [S]Sair \n");
         fflush(stdin);
         scanf("%c", &op);
         switch (op) {
             case '1':
                 printf("\n Musicas \n");
-                music_list();
+                music_list();               //Lista as os titulos e autores das musicas  WORKING BUT IS ALSO LISTING THE LYRICS - MUST IMPROVE
                 break;
             case '2':
                 printf("\n Insira o nome da Musica \n");
-                music_add(&vec_musicas[music_num]);
+                music_add(&vec_musicas[music_num]);         //WORKING ADDS ONE MUSIC BUT IT ISN'T ADDING AN ARTIST
                 music_num++; // aumenta o numero de musicas no vector
                 music_save();
-                break;
-            case '5':
-                music_load();
-                printf("\n Ficheiro Carregado com Sucesso \n");
-                break;
-            case '6':
-                music_save();
-                printf("\n Ficheiro Gravado com Sucesso \n");
                 break;
             case 's':
             case 'S':
@@ -90,6 +80,16 @@ void music_add(struct musica *m) {
     printf("Insira o titulo da musica:\n");
 
     music_input(m->titulo);
+    printf("Insira o artista da musica:\n");
+
+    music_input(m->artista);
+    printf("Insira o album da musica:\n");
+
+    music_input(m->album);
+    printf("Insira o ano da musica:\n");
+
+    music_input(m->ano);
+
 }
 
 
@@ -130,6 +130,13 @@ void music_load() {
             fgets(linha, sizeof(linha), fp);            // artista
             linha[strlen(linha) - 1] = 0;                // retira quebra de linha
             strcpy(vec_musicas[i].artista, &linha[9]);       // artista começa no 9º char
+            fgets(linha, sizeof(linha), fp);            // titulo
+            linha[strlen(linha) - 1] = 0;                // retira quebra de linha
+            strcpy(vec_musicas[i].album, &linha[7]);        // titulo começa no 7º char
+            fgets(linha, sizeof(linha), fp);            // artista
+            linha[strlen(linha) - 1] = 0;                // retira quebra de linha
+            strcpy(vec_musicas[i].ano, &linha[4]);       // artista começa no 4º char
+
             lrc_load(&vec_musicas[i]);
         }
         fclose(fp);
@@ -145,6 +152,8 @@ void music_save() {
         for (i = 0; i < music_num; i++) {
             fprintf(fp, "titulo: %s\n", vec_musicas[i].titulo);
             fprintf(fp, "artista: %s\n", vec_musicas[i].artista);
+            fprintf(fp, "album: %s\n", vec_musicas[i].album);
+            fprintf(fp, "ano: %s\n", vec_musicas[i].ano);
         }
         fclose(fp);
     }

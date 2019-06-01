@@ -3,7 +3,7 @@
 
 
 
-char ficheiro_musicas[] = "musicas.txt";// nome do ficheiro
+//char ficheiro_musicas[] = "musicas.txt";// nome do ficheiro  DONT KNOW IF IT IS NEEDED- TEST LATER AFTER BEING SURE EVERYTHING WORKS WITHOUT THIS
 
 
 
