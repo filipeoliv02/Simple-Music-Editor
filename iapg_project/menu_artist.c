@@ -3,8 +3,8 @@
 #include <stdio.h>
 
 
-int artist_num = 0;                         // numero de artistas no vector
-char artist_file[] = "artistas.txt";        // nome do ficheiro de artistas
+int artist_num = 0;                         /// numero de artistas no vector
+char artist_file[] = "artistas.txt";        /// nome do ficheiro de artistas
 
 int menu_artist() {
     char op;
@@ -30,7 +30,6 @@ int menu_artist() {
             case 'S':
                 break;
             default:
-                //system("cls"); // clear screen - cls windows or clear for linux/unix
                 printf(" Opcao invalida!!! \n");
         }
         if (op != 's' && op != 'S') {
@@ -50,16 +49,10 @@ void artist_print(struct artista *a) {
 
 
 void artist_input(char *temp) {
-    char input[TAM_NOME];
-    /*
-    * POR FAZER - esta funcao deve ler uma string escrita pelo utilizador no terminal, e guarda-la em temp
-    */
-    //scanf("%s", input);
-
+    char input[TAM_NOME];           ///esta funcao deve ler uma string escrita pelo utilizador no terminal, e guarda-la em temp
     scanf(" %[^\n]s", input);
     strcpy(temp, input);
 }
-
 
 
 void artist_add(struct artista *a) {
@@ -100,7 +93,7 @@ void artist_edit(struct artista *a) {
 
 void artist_list() {
     for (int i = 0; i < artist_num; i++) {
-        printf("[%d] ",i+1);
+        printf("[%d] ", i + 1);
         artist_print(&vec_artistas[i]);
     }
 }
@@ -112,14 +105,14 @@ void artist_load() {
     artist_num = 0;
     fp = fopen(artist_file, "r");
     if (fp != NULL) {
-        fscanf(fp, "%*s %d\n", &artist_num);            // ignore the string and store only the int
+        fscanf(fp, "%*s %d\n", &artist_num);            /// ignore the string and store only the int
         for (i = 0; i < artist_num; i++) {
-            fgets(linha, sizeof(linha), fp);            // titulo
-            linha[strlen(linha) - 1] = 0;                // retira quebra de linha
-            strcpy(vec_artistas[i].nome, &linha[6]);        // titulo começa no 6º char
-            fgets(linha, sizeof(linha), fp);            // titulo
-            linha[strlen(linha) - 1] = 0;                // retira quebra de linha
-            strcpy(vec_artistas[i].nacionalidade, &linha[15]);        // titulo começa no 15º char
+            fgets(linha, sizeof(linha), fp);            /// titulo
+            linha[strlen(linha) - 1] = 0;                /// retira quebra de linha
+            strcpy(vec_artistas[i].nome, &linha[6]);        /// titulo começa no 6º char
+            fgets(linha, sizeof(linha), fp);            /// titulo
+            linha[strlen(linha) - 1] = 0;                /// retira quebra de linha
+            strcpy(vec_artistas[i].nacionalidade, &linha[15]);        /// titulo começa no 15º char
 
         }
         fclose(fp);
@@ -141,16 +134,15 @@ void artist_save() {
 }
 
 
-void artist_search(){
+void artist_search() {
     char pesquisa[50];
     printf("\n Insira o nome do Artista \n");
 
     artist_input(pesquisa);
-    for(int i=0;i<artist_num;i++){
+    for (int i = 0; i < artist_num; i++) {
 
 
-
-        if(strcmp(vec_artistas[i].nome,pesquisa)==0)
+        if (strcmp(vec_artistas[i].nome, pesquisa) == 0)
             menu_edit_remove_artist(&vec_artistas[i]);
     }
 }

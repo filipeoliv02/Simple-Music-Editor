@@ -31,7 +31,6 @@ int menu_edit_remove_music(struct musica *m) {
             case 'S':
                 break;
             default:
-                //system("cls"); // clear screen - cls windows or clear for linux/unix
                 printf(" Opcao invalida!!! \n");
         }
         if (op != 's' && op != 'S') {
@@ -66,7 +65,6 @@ int menu_edit_remove_artist(struct artista *a) {
             case 'S':
                 break;
             default:
-                //system("cls"); // clear screen - cls windows or clear for linux/unix
                 printf(" Opcao invalida!!! \n");
         }
         if (op != 's' && op != 'S') {

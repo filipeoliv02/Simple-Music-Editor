@@ -30,7 +30,7 @@ int artist_num; // numero de musicas no vector
  };
 
 
-struct musica {             // estruturas permitem definir novos tipos de dados - tipo de dados neste caso ira ter o nome musica - e composto por duas strings e uma estrutura, titulo e artista
+struct musica {             /// estruturas permitem definir novos tipos de dados - tipo de dados neste caso ira ter o nome musica - e composto por duas strings e uma estrutura, titulo e artista
     char titulo[TAM_NOME];
     char artista[TAM_NOME];
     char album[TAM_NOME];
@@ -41,18 +41,18 @@ struct musica {             // estruturas permitem definir novos tipos de dados 
     ARTISTA cantor;
 };
 
-struct musica vec_musicas[TAM_VECTOR];    // inicializa-se com a estrutura criada acima um vector de musicas
-struct artista vec_artistas[TAM_VECTOR];    // inicializa-se com a estrutura criada acima um vector de artistas
+struct musica vec_musicas[TAM_VECTOR];    /// inicializa-se com a estrutura criada acima um vector de musicas
+struct artista vec_artistas[TAM_VECTOR];    /// inicializa-se com a estrutura criada acima um vector de artistas
 
 
-//MENU_PRINCIPAL
+///MENU_PRINCIPAL
 int menu_pr();
 void lista_todas_musicas();
 void imprime_musica(struct musica *m);
 void gravar_ficheiro();
 void carregar_ficheiro();
 
-//MENU_MUSIC
+///MENU_MUSIC
 int menu_music();
 void music_list();
 void music_add(struct musica *m);
@@ -64,7 +64,7 @@ void music_save();
 void music_input(char *temp);
 void music_search();
 
-//MENU_ARTIST
+///MENU_ARTIST
 int menu_artist();
 void artist_list();
 void artist_search();
@@ -77,13 +77,13 @@ void artist_save();
 void artist_input(char *temp);
 int menu_artist_edit(struct artista *a);
 
-//MENU_SEARCH
+///MENU_SEARCH
 int menu_search();
 
-//MENU_YEAR
+///MENU_YEAR
 void year_search();
 
-//MENU_ALBUM
+///MENU_ALBUM
 void album_search();
 
 

@@ -1,7 +1,7 @@
 #include "project.h"
 
 
-char lrc_file[] = "musicas/Bon Jovi - Always.lrc";      // nome do ficheiro
+char lrc_file[] = "musicas/Bon Jovi - Always.lrc";      /// nome do ficheiro
 
 
 

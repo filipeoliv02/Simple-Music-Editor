@@ -38,7 +38,6 @@ int menu_search() {
             case 'S':
                 break;
             default:
-                //system("cls"); // clear screen - cls windows or clear for linux/unix
                 printf(" Opcao invalida!!! \n");
                 break;
         }
