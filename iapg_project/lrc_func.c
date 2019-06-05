@@ -16,11 +16,11 @@ void lrc_load(struct musica *m) {
     if (fp != NULL) {
         while (fgets(linha, sizeof(linha), fp)) {
             if (linha[strlen(linha) - 2] != ']') {
-                i=m->num_letras;
+                i = m->num_letras;
 
 
-                sscanf(linha,"[%d:%d.%d]%[^\n]s",&m->letras[i].min,&m->letras[i].seg,&m->letras[i].cs,m->letras[i].texto);
-
+                sscanf(linha, "[%d:%d.%d]%[^\n]s", &m->letras[i].min, &m->letras[i].seg, &m->letras[i].cs,
+                       m->letras[i].texto);
 
 
                 m->num_letras++;

@@ -3,4 +3,4 @@ project(iapg_project C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(iapg_project main.c menu_pr.c menu_artist.c menu_music.c menu_search.c project.h menu_edit_remove.c temp.c menu_year.c menu_album.c)
+add_executable(iapg_project main.c menu_pr.c menu_artist.c menu_music.c menu_search.c project.h menu_edit_remove.c lrc_func.c menu_year.c menu_album.c)
