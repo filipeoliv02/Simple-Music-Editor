@@ -30,3 +30,4 @@ void lrc_load(struct musica *m) {
         fclose(fp);
     }
 }
+

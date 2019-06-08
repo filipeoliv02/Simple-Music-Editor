@@ -18,11 +18,11 @@ int menu_artist() {
         switch (op) {
             case '1':
                 printf("\n Artistas \n");
-                artist_list();
+                artist_list();              ///lista todos os artistas assim como a sua nacionalidade
                 break;
             case '2':
                 printf("\n Insira Nome Artista \n");
-                artist_add(&vec_artistas[artist_num]);
+                artist_add(&vec_artistas[artist_num]);      ///adiciona artistas
                 artist_num++;
                 artist_save();
                 break;
@@ -42,7 +42,8 @@ int menu_artist() {
 
 }
 
-void artist_print(struct artista *a) {
+void
+artist_print(struct artista *a) {                  ///funciona em conjunto com outra funcao para imprimir os artistas
     printf("%s - %s\n", a->nome, a->nacionalidade);
 
 }
@@ -55,7 +56,7 @@ void artist_input(char *temp) {
 }
 
 
-void artist_add(struct artista *a) {
+void artist_add(struct artista *a) {            ///adiciona artistas
 
     getchar();
     printf("Insira o nome do artista:\n");
@@ -66,7 +67,7 @@ void artist_add(struct artista *a) {
 
 }
 
-void artist_remove(struct artista *a) {
+void artist_remove(struct artista *a) {             ///remove o artista selecionado
 
     int existe = 0;
     for (int i = 0; i < artist_num; i++) {
@@ -91,7 +92,7 @@ void artist_edit(struct artista *a) {
     artist_input(a->nacionalidade);
 }
 
-void artist_list() {
+void artist_list() {                            ///lista todos os artistas
     for (int i = 0; i < artist_num; i++) {
         printf("[%d] ", i + 1);
         artist_print(&vec_artistas[i]);
@@ -119,7 +120,7 @@ void artist_load() {
     }
 }
 
-void artist_save() {
+void artist_save() {                ///grava alteracoes feitas pelo utilizador no ficheiro artistas
     FILE *fp;
     int i;
     fp = fopen(artist_file, "w");
@@ -134,7 +135,7 @@ void artist_save() {
 }
 
 
-void artist_search() {
+void artist_search() {              ///encontra e remete para o menu de edicao de artistas
     char pesquisa[50];
     printf("\n Insira o nome do Artista \n");
 

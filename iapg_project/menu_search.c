@@ -3,7 +3,7 @@
 
 
 
-int menu_search() {
+int menu_search() {         ///Menu Pesquisar
 
     char op, pesquisa[50];
     do {
@@ -18,20 +18,20 @@ int menu_search() {
         switch (op) {
             case '1':
                 music_load();
-                music_search();
+                music_search();             ///Pesquisa pelo titulo da musica
 
                 break;
             case '2':
-                artist_load();
+                artist_load();              ///Pesquisa pelo artista da musica
                 artist_search();
                 break;
             case '3':
                 printf("\n Insira o Ano da Musica \n");
-                year_search();
+                year_search();                          ///Pesquisa pelo ano da musica
                 break;
             case '4':
                 printf("\n Insira o nome do Album \n");
-                album_search();
+                album_search();                                  ///Pesquisa pelo album da musica
 
                 break;
             case 's':

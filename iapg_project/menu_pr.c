@@ -1,10 +1,10 @@
 #include "project.h"
 
-    int menu_pr() {
+    int menu_pr() {             ///Menu Principal
     char opcao;
     do {
         printf("Escolha uma opcao entre as possiveis: \n");
-        printf(" [1] Listar Informacao \n");                        ///Lista as opçoes disponiveis no meunu principal assim como a opçao  para selecionar
+        printf(" [1] Listar Informacao \n");
         printf(" [2] Musicas \n");
         printf(" [3] Artistas \n");
         printf(" [4] Procurar \n");

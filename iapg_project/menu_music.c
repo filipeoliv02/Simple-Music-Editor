@@ -4,12 +4,12 @@
 
 
 int music_num = 0;            /// numero de musicas no vector
-char music_file[] = "musicas.txt";/// nome do ficheiro
+char music_file[] = "musicas.txt";        /// nome do ficheiro
 
 
 
 
-int menu_music() {
+int menu_music() {      ///Menu das Musicas
 
     char op;
     do {
@@ -27,8 +27,8 @@ int menu_music() {
             case '2':
                 printf("\n Insira o nome da Musica \n");
                 music_add(&vec_musicas[music_num]);        ///Adiciona uma musica
-                music_num++; /// aumenta o numero de musicas no vector
-                music_save();
+                music_num++;         /// aumenta o numero de musicas no vector
+                music_save();         ///Grava as alterações realizadas no ficheior musicas.txt
                 break;
             case 's':
             case 'S':
@@ -45,7 +45,7 @@ int menu_music() {
     return 0;
 }
 
-void music_print(struct musica *m) {
+void music_print(struct musica *m) {                              ///usado noutra funcao para imprimir varias musicas
     printf("%s - %s (%s)", m->titulo, m->album,m->ano);
 }
 
@@ -58,7 +58,7 @@ void music_input(char *temp) {
 }
 
 
-void music_edit(struct musica*m) {
+void music_edit(struct musica*m) {          ///funcao dedicada a alterar uma musica
 
 
     getchar();
@@ -67,7 +67,7 @@ void music_edit(struct musica*m) {
     music_input(m->titulo);
 }
 
-void music_add(struct musica *m) {
+void music_add(struct musica *m) {              ///Funcao adicionar musica
 
     getchar();
     printf("Insira o titulo da musica:\n");
@@ -87,7 +87,7 @@ void music_add(struct musica *m) {
 
 
 
-void music_remove(struct musica *m) {
+void music_remove(struct musica *m) {           ///remove a musica selecionada pelo utilizador
 
     int existe = 0;
     for (int i = 0; i < music_num; i++) {
@@ -101,7 +101,7 @@ void music_remove(struct musica *m) {
     }
     music_num--;
 }
-void music_list() {
+void music_list() {                                     ///lista as varias musicas
     for (int i = 0; i < music_num; i++) {
         printf("\n [%d] ", i + 1);
         music_print(&vec_musicas[i]);
@@ -136,7 +136,7 @@ void music_load() {
     }
 }
 
-void music_save() {
+void music_save() {                 ///grava alteracoes feitas pelo utilizador no ficheiro
     FILE *fp;
     int i;
     fp = fopen(music_file, "w");
@@ -153,7 +153,7 @@ void music_save() {
 }
 
 
-void music_search() {
+void music_search() {               ///encontra e remete para o menu de edicao de musicas
     char pesquisa[50];
     printf("\n Insira o Titulo da Musica \n");
 
