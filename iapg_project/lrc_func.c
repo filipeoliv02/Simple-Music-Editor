@@ -3,7 +3,12 @@
 
 char lrc_file[] = "musicas/Bon Jovi - Always.lrc";      /// nome do ficheiro
 
-
+/*!
+ *
+ * @brief
+ * carrega o ficheiro com as letras
+ *
+ */
 
 void lrc_load(struct musica *m) {
     FILE *fp;

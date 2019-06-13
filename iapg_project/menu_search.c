@@ -1,9 +1,15 @@
 #include "project.h"
 
+/*!
+ *
+ * @brief
+ * Menu Pesquisar
+ * @details
+ * Permite pesquisar de acordo com a escolha do utilizador
+ */
 
 
-
-int menu_search() {         ///Menu Pesquisar
+int menu_search() {
 
     char op, pesquisa[50];
     do {
@@ -18,20 +24,20 @@ int menu_search() {         ///Menu Pesquisar
         switch (op) {
             case '1':
                 music_load();
-                music_search();             ///Pesquisa pelo titulo da musica
+                music_search();
 
                 break;
             case '2':
-                artist_load();              ///Pesquisa pelo artista da musica
+                artist_load();
                 artist_search();
                 break;
             case '3':
                 printf("\n Insira o Ano da Musica \n");
-                year_search();                          ///Pesquisa pelo ano da musica
+                year_search();
                 break;
             case '4':
                 printf("\n Insira o nome do Album \n");
-                album_search();                                  ///Pesquisa pelo album da musica
+                album_search();
 
                 break;
             case 's':

@@ -3,13 +3,20 @@
 
 
 
-int music_num = 0;            /// numero de musicas no vector
+int music_num = 0;            /// numero de musicas no vector musicas
 char music_file[] = "musicas.txt";        /// nome do ficheiro
 
 
+/*!
+ *
+ * @brief
+ * Menu das Músicas
+ * @details
+ * Menu com opções dedicado às Músicas
+ *
+ */
 
-
-int menu_music() {      ///Menu das Musicas
+int menu_music() {
 
     char op;
     do {
@@ -22,13 +29,13 @@ int menu_music() {      ///Menu das Musicas
         switch (op) {
             case '1':
                 printf("\n Musicas \n");
-                music_list();               ///Lista as os titulos e autores das musicas
+                music_list();
                 break;
             case '2':
                 printf("\n Insira o nome da Musica \n");
-                music_add(&vec_musicas[music_num]);        ///Adiciona uma musica
-                music_num++;         /// aumenta o numero de musicas no vector
-                music_save();         ///Grava as alterações realizadas no ficheior musicas.txt
+                music_add(&vec_musicas[music_num]);
+                music_num++;
+                music_save();
                 break;
             case 's':
             case 'S':
@@ -44,21 +51,42 @@ int menu_music() {      ///Menu das Musicas
 
     return 0;
 }
+/*!
+ *
+ * @brief
+ * usado noutra funcao para imprimir varias musicas
+ *
+ *
+ */
 
-void music_print(struct musica *m) {                              ///usado noutra funcao para imprimir varias musicas
+
+void music_print(struct musica *m) {
     printf("%s - %s (%s)", m->titulo, m->album,m->ano);
 }
 
+/*!
+ *
+ * @brief
+ * esta funcao deve ler uma string escrita pelo utilizador no terminal, e guarda-la em temp
+ *
+ */
+
 
 void music_input(char *temp) {
-    char input[TAM_NOME];                           ///esta funcao deve ler uma string escrita pelo utilizador no terminal, e guarda-la em temp
+    char input[TAM_NOME];
     scanf(" %[^\n]s", input);
     strcpy(temp, input);
 
 }
 
 
-void music_edit(struct musica*m) {          ///funcao dedicada a alterar uma musica
+/*!
+ *
+ * @brief
+ * funcao dedicada a alterar uma musica
+ */
+
+void music_edit(struct musica*m) {
 
 
     getchar();
@@ -67,7 +95,16 @@ void music_edit(struct musica*m) {          ///funcao dedicada a alterar uma mus
     music_input(m->titulo);
 }
 
-void music_add(struct musica *m) {              ///Funcao adicionar musica
+
+/*!
+ *
+ * @brief
+ * Adiciona uma Música
+ * @details
+ * Adiciona uma Música com as informações de Titulo, Artista, Album e Ano
+ */
+
+void music_add(struct musica *m) {
 
     getchar();
     printf("Insira o titulo da musica:\n");
@@ -82,12 +119,17 @@ void music_add(struct musica *m) {              ///Funcao adicionar musica
     printf("Insira o ano da musica:\n");
 
     music_input(m->ano);
-
 }
 
+/*!
+ *
+ * @brief
+ * Remove a Música Selecionada pelo Utilizador
+ * @details
+ *
+ */
 
-
-void music_remove(struct musica *m) {           ///remove a musica selecionada pelo utilizador
+void music_remove(struct musica *m) {
 
     int existe = 0;
     for (int i = 0; i < music_num; i++) {
@@ -101,12 +143,30 @@ void music_remove(struct musica *m) {           ///remove a musica selecionada p
     }
     music_num--;
 }
-void music_list() {                                     ///lista as varias musicas
+
+
+/*!
+ * @brief
+ * Lista as várias músicas
+ * @details
+ * Lista todas as Músicas e os seu respetico Ano e Album
+ */
+
+
+void music_list() {
     for (int i = 0; i < music_num; i++) {
         printf("\n [%d] ", i + 1);
         music_print(&vec_musicas[i]);
     }
 }
+
+/*!
+ * @brief
+ * carrega o ficheiro musicas.txt
+ * @details
+ * carrega o ficheiro musicas.txt e distingue as diferentes carateristicas de cada uma das músicas
+ */
+
 
 void music_load() {
     FILE *fp;
@@ -115,20 +175,20 @@ void music_load() {
     music_num = 0;
     fp = fopen(music_file, "r");
     if (fp != NULL) {
-        fscanf(fp, "%*s %d\n", &music_num);            /// ignore the string and store only the int
+        fscanf(fp, "%*s %d\n", &music_num);
         for (i = 0; i < music_num; i++) {
-            fgets(linha, sizeof(linha), fp);            /// titulo
-            linha[strlen(linha) - 1] = 0;                /// retira quebra de linha
-            strcpy(vec_musicas[i].titulo, &linha[8]);        // titulo começa no 8º char
-            fgets(linha, sizeof(linha), fp);            /// artista
-            linha[strlen(linha) - 1] = 0;                /// retira quebra de linha
-            strcpy(vec_musicas[i].artista, &linha[9]);       // artista começa no 9º char
-            fgets(linha, sizeof(linha), fp);            /// titulo
-            linha[strlen(linha) - 1] = 0;                /// retira quebra de linha
-            strcpy(vec_musicas[i].album, &linha[7]);        /// titulo começa no 7º char
-            fgets(linha, sizeof(linha), fp);            /// artista
-            linha[strlen(linha) - 1] = 0;                /// retira quebra de linha
-            strcpy(vec_musicas[i].ano, &linha[5]);       /// artista começa no 5º char
+            fgets(linha, sizeof(linha), fp);
+            linha[strlen(linha) - 1] = 0;
+            strcpy(vec_musicas[i].titulo, &linha[8]);
+            fgets(linha, sizeof(linha), fp);
+            linha[strlen(linha) - 1] = 0;
+            strcpy(vec_musicas[i].artista, &linha[9]);
+            fgets(linha, sizeof(linha), fp);
+            linha[strlen(linha) - 1] = 0;
+            strcpy(vec_musicas[i].album, &linha[7]);
+            fgets(linha, sizeof(linha), fp);
+            linha[strlen(linha) - 1] = 0;
+            strcpy(vec_musicas[i].ano, &linha[5]);
 
             lrc_load(&vec_musicas[i]);
         }
@@ -136,7 +196,16 @@ void music_load() {
     }
 }
 
-void music_save() {                 ///grava alteracoes feitas pelo utilizador no ficheiro
+/*!
+ * @brief
+ * grava alterações feitas pelo utilizador
+ * @details
+ * Percorre as diferentes varaiáveis da estrutura das Músicas
+ *
+ */
+
+
+void music_save() {
     FILE *fp;
     int i;
     fp = fopen(music_file, "w");
@@ -152,8 +221,14 @@ void music_save() {                 ///grava alteracoes feitas pelo utilizador n
     }
 }
 
+/*!
+ * @brief
+ * Remete para o Menu de Edição de Músicas
+ * @details
+ * Faz a seleção da Música pretendida e remete para o menu de edição
+ */
 
-void music_search() {               ///encontra e remete para o menu de edicao de musicas
+void music_search() {
     char pesquisa[50];
     printf("\n Insira o Titulo da Musica \n");
 

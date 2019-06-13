@@ -6,6 +6,15 @@
 int artist_num = 0;                         /// numero de artistas no vector
 char artist_file[] = "artistas.txt";        /// nome do ficheiro de artistas
 
+
+
+
+/*!
+ *
+ * @brief
+ * abre o menu de opcoes dos artistas
+ *
+ */
 int menu_artist() {
     char op;
     do {
@@ -18,11 +27,11 @@ int menu_artist() {
         switch (op) {
             case '1':
                 printf("\n Artistas \n");
-                artist_list();              ///lista todos os artistas assim como a sua nacionalidade
+                artist_list();
                 break;
             case '2':
                 printf("\n Insira Nome Artista \n");
-                artist_add(&vec_artistas[artist_num]);      ///adiciona artistas
+                artist_add(&vec_artistas[artist_num]);
                 artist_num++;
                 artist_save();
                 break;
@@ -43,7 +52,14 @@ int menu_artist() {
 }
 
 void
-artist_print(struct artista *a) {                  ///funciona em conjunto com outra funcao para imprimir os artistas
+
+/*!
+ *
+ * @brief
+ * funciona em conjunto com outra funcao para imprimir os artistas
+ */
+
+artist_print(struct artista *a) {
     printf("%s - %s\n", a->nome, a->nacionalidade);
 
 }
@@ -55,8 +71,13 @@ void artist_input(char *temp) {
     strcpy(temp, input);
 }
 
+/*!
+ *
+ * @brief
+ * adiciona artistas
+ */
 
-void artist_add(struct artista *a) {            ///adiciona artistas
+void artist_add(struct artista *a) {
 
     getchar();
     printf("Insira o nome do artista:\n");
@@ -67,7 +88,13 @@ void artist_add(struct artista *a) {            ///adiciona artistas
 
 }
 
-void artist_remove(struct artista *a) {             ///remove o artista selecionado
+/*!
+ *
+ * @brief
+ * remove o artista selecionado
+ */
+
+void artist_remove(struct artista *a) {
 
     int existe = 0;
     for (int i = 0; i < artist_num; i++) {
@@ -82,6 +109,7 @@ void artist_remove(struct artista *a) {             ///remove o artista selecion
     artist_num--;
 }
 
+
 void artist_edit(struct artista *a) {
     getchar();
 
@@ -92,12 +120,25 @@ void artist_edit(struct artista *a) {
     artist_input(a->nacionalidade);
 }
 
-void artist_list() {                            ///lista todos os artistas
+/*!
+ * @brief
+ * lista todos os artistas
+ */
+
+void artist_list() {
     for (int i = 0; i < artist_num; i++) {
         printf("[%d] ", i + 1);
         artist_print(&vec_artistas[i]);
     }
 }
+
+
+/*!
+ * @brief
+ * carrega o ficheiro artistas.txt
+ */
+
+
 
 void artist_load() {
     FILE *fp;
@@ -106,21 +147,27 @@ void artist_load() {
     artist_num = 0;
     fp = fopen(artist_file, "r");
     if (fp != NULL) {
-        fscanf(fp, "%*s %d\n", &artist_num);            /// ignore the string and store only the int
+        fscanf(fp, "%*s %d\n", &artist_num);            
         for (i = 0; i < artist_num; i++) {
-            fgets(linha, sizeof(linha), fp);            /// titulo
-            linha[strlen(linha) - 1] = 0;                /// retira quebra de linha
-            strcpy(vec_artistas[i].nome, &linha[6]);        /// titulo começa no 6º char
-            fgets(linha, sizeof(linha), fp);            /// titulo
-            linha[strlen(linha) - 1] = 0;                /// retira quebra de linha
-            strcpy(vec_artistas[i].nacionalidade, &linha[15]);        /// titulo começa no 15º char
+            fgets(linha, sizeof(linha), fp);            
+            linha[strlen(linha) - 1] = 0;               
+            strcpy(vec_artistas[i].nome, &linha[6]);    
+            fgets(linha, sizeof(linha), fp);            
+            linha[strlen(linha) - 1] = 0;               
+            strcpy(vec_artistas[i].nacionalidade, &linha[15]);
 
         }
         fclose(fp);
     }
 }
 
-void artist_save() {                ///grava alteracoes feitas pelo utilizador no ficheiro artistas
+
+/*!
+ * @brief
+ * grava alteracoes feitas pelo utilizador no ficheiro artistas
+ */
+
+void artist_save() {
     FILE *fp;
     int i;
     fp = fopen(artist_file, "w");
@@ -134,8 +181,13 @@ void artist_save() {                ///grava alteracoes feitas pelo utilizador n
     }
 }
 
+/*!
+ * @brief
+ * encontra e remete para o menu de edicao de artistas
+ *
+ */
 
-void artist_search() {              ///encontra e remete para o menu de edicao de artistas
+void artist_search() {
     char pesquisa[50];
     printf("\n Insira o nome do Artista \n");
 

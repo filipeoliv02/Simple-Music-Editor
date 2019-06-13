@@ -1,0 +1,159 @@
+\hypertarget{menu__music_8c}{}\section{menu\+\_\+music.\+c File Reference}
+\label{menu__music_8c}\index{menu\_music.c@{menu\_music.c}}
+{\ttfamily \#include \char`\"{}project.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{menu__music_8c_a088df08a705b7c74bda39434bbefa5c8}{menu\+\_\+music}} ()
+\begin{DoxyCompactList}\small\item\em nome do ficheiro \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu__music_8c_a0593b129f68797b24a9ddbec810a80e9}{music\+\_\+print}} (struct \mbox{\hyperlink{structmusica}{musica}} $\ast$m)
+\begin{DoxyCompactList}\small\item\em usado noutra funcao para imprimir varias musicas \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu__music_8c_a3cde506a190f5edc6ccd1a9f92f00afc}{music\+\_\+input}} (char $\ast$temp)
+\begin{DoxyCompactList}\small\item\em esta funcao deve ler uma string escrita pelo utilizador no terminal, e guarda-\/la em temp \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu__music_8c_a86e0526889a472c55b6599489e04e164}{music\+\_\+edit}} (struct \mbox{\hyperlink{structmusica}{musica}} $\ast$m)
+\begin{DoxyCompactList}\small\item\em funcao dedicada a alterar uma musica \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu__music_8c_a0601269df7d88d6fe6b66fbbbdc589cb}{music\+\_\+add}} (struct \mbox{\hyperlink{structmusica}{musica}} $\ast$m)
+\begin{DoxyCompactList}\small\item\em Adiciona uma Música. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu__music_8c_a3ed1d066f06b3b8ce2416cf4418231f9}{music\+\_\+remove}} (struct \mbox{\hyperlink{structmusica}{musica}} $\ast$m)
+\begin{DoxyCompactList}\small\item\em Remove a Música Selecionada pelo Utilizador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu__music_8c_a805fc5a774bc1872a74344155c721bd4}{music\+\_\+list}} ()
+\begin{DoxyCompactList}\small\item\em Lista as várias músicas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu__music_8c_a35fb249f740a3763e67875658fb507ec}{music\+\_\+load}} ()
+\begin{DoxyCompactList}\small\item\em carrega o ficheiro musicas.\+txt \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu__music_8c_aca4dc8bca342d560906d9c5a375e5b52}{music\+\_\+save}} ()
+\begin{DoxyCompactList}\small\item\em grava alterações feitas pelo utilizador \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu__music_8c_acd2ed77d07ab0a38a48ff3e12e405a37}{music\+\_\+search}} ()
+\begin{DoxyCompactList}\small\item\em Remete para o Menu de Edição de Músicas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{menu__music_8c_a2fc88755839757d7176cb71c37064b39}{music\+\_\+num}} = 0
+\item 
+char \mbox{\hyperlink{menu__music_8c_a60b482a81a97025e2040341d609a3d88}{music\+\_\+file}} \mbox{[}$\,$\mbox{]} = \char`\"{}musicas.\+txt\char`\"{}
+\begin{DoxyCompactList}\small\item\em numero de musicas no vector musicas \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{menu__music_8c_a088df08a705b7c74bda39434bbefa5c8}\label{menu__music_8c_a088df08a705b7c74bda39434bbefa5c8}} 
+\index{menu\_music.c@{menu\_music.c}!menu\_music@{menu\_music}}
+\index{menu\_music@{menu\_music}!menu\_music.c@{menu\_music.c}}
+\subsubsection{\texorpdfstring{menu\_music()}{menu\_music()}}
+{\footnotesize\ttfamily int menu\+\_\+music (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+nome do ficheiro 
+
+M\+E\+N\+U\+\_\+\+M\+U\+S\+IC.
+
+Menu das Músicas
+
+Menu com opções dedicado às Músicas \mbox{\Hypertarget{menu__music_8c_a0601269df7d88d6fe6b66fbbbdc589cb}\label{menu__music_8c_a0601269df7d88d6fe6b66fbbbdc589cb}} 
+\index{menu\_music.c@{menu\_music.c}!music\_add@{music\_add}}
+\index{music\_add@{music\_add}!menu\_music.c@{menu\_music.c}}
+\subsubsection{\texorpdfstring{music\_add()}{music\_add()}}
+{\footnotesize\ttfamily void music\+\_\+add (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structmusica}{musica}} $\ast$}]{m }\end{DoxyParamCaption})}
+
+
+
+Adiciona uma Música. 
+
+Adiciona uma Música com as informações de Titulo, Artista, Album e Ano \mbox{\Hypertarget{menu__music_8c_a86e0526889a472c55b6599489e04e164}\label{menu__music_8c_a86e0526889a472c55b6599489e04e164}} 
+\index{menu\_music.c@{menu\_music.c}!music\_edit@{music\_edit}}
+\index{music\_edit@{music\_edit}!menu\_music.c@{menu\_music.c}}
+\subsubsection{\texorpdfstring{music\_edit()}{music\_edit()}}
+{\footnotesize\ttfamily void music\+\_\+edit (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structmusica}{musica}} $\ast$}]{m }\end{DoxyParamCaption})}
+
+
+
+funcao dedicada a alterar uma musica 
+
+\mbox{\Hypertarget{menu__music_8c_a3cde506a190f5edc6ccd1a9f92f00afc}\label{menu__music_8c_a3cde506a190f5edc6ccd1a9f92f00afc}} 
+\index{menu\_music.c@{menu\_music.c}!music\_input@{music\_input}}
+\index{music\_input@{music\_input}!menu\_music.c@{menu\_music.c}}
+\subsubsection{\texorpdfstring{music\_input()}{music\_input()}}
+{\footnotesize\ttfamily void music\+\_\+input (\begin{DoxyParamCaption}\item[{char $\ast$}]{temp }\end{DoxyParamCaption})}
+
+
+
+esta funcao deve ler uma string escrita pelo utilizador no terminal, e guarda-\/la em temp 
+
+\mbox{\Hypertarget{menu__music_8c_a805fc5a774bc1872a74344155c721bd4}\label{menu__music_8c_a805fc5a774bc1872a74344155c721bd4}} 
+\index{menu\_music.c@{menu\_music.c}!music\_list@{music\_list}}
+\index{music\_list@{music\_list}!menu\_music.c@{menu\_music.c}}
+\subsubsection{\texorpdfstring{music\_list()}{music\_list()}}
+{\footnotesize\ttfamily void music\+\_\+list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Lista as várias músicas. 
+
+Lista todas as Músicas e os seu respetico Ano e Album \mbox{\Hypertarget{menu__music_8c_a35fb249f740a3763e67875658fb507ec}\label{menu__music_8c_a35fb249f740a3763e67875658fb507ec}} 
+\index{menu\_music.c@{menu\_music.c}!music\_load@{music\_load}}
+\index{music\_load@{music\_load}!menu\_music.c@{menu\_music.c}}
+\subsubsection{\texorpdfstring{music\_load()}{music\_load()}}
+{\footnotesize\ttfamily void music\+\_\+load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+carrega o ficheiro musicas.\+txt 
+
+carrega o ficheiro musicas.\+txt e distingue as diferentes carateristicas de cada uma das músicas \mbox{\Hypertarget{menu__music_8c_a0593b129f68797b24a9ddbec810a80e9}\label{menu__music_8c_a0593b129f68797b24a9ddbec810a80e9}} 
+\index{menu\_music.c@{menu\_music.c}!music\_print@{music\_print}}
+\index{music\_print@{music\_print}!menu\_music.c@{menu\_music.c}}
+\subsubsection{\texorpdfstring{music\_print()}{music\_print()}}
+{\footnotesize\ttfamily void music\+\_\+print (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structmusica}{musica}} $\ast$}]{m }\end{DoxyParamCaption})}
+
+
+
+usado noutra funcao para imprimir varias musicas 
+
+\mbox{\Hypertarget{menu__music_8c_a3ed1d066f06b3b8ce2416cf4418231f9}\label{menu__music_8c_a3ed1d066f06b3b8ce2416cf4418231f9}} 
+\index{menu\_music.c@{menu\_music.c}!music\_remove@{music\_remove}}
+\index{music\_remove@{music\_remove}!menu\_music.c@{menu\_music.c}}
+\subsubsection{\texorpdfstring{music\_remove()}{music\_remove()}}
+{\footnotesize\ttfamily void music\+\_\+remove (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structmusica}{musica}} $\ast$}]{m }\end{DoxyParamCaption})}
+
+
+
+Remove a Música Selecionada pelo Utilizador. 
+
+remove a musica selecionada pelo utilizador \mbox{\Hypertarget{menu__music_8c_aca4dc8bca342d560906d9c5a375e5b52}\label{menu__music_8c_aca4dc8bca342d560906d9c5a375e5b52}} 
+\index{menu\_music.c@{menu\_music.c}!music\_save@{music\_save}}
+\index{music\_save@{music\_save}!menu\_music.c@{menu\_music.c}}
+\subsubsection{\texorpdfstring{music\_save()}{music\_save()}}
+{\footnotesize\ttfamily void music\+\_\+save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+grava alterações feitas pelo utilizador 
+
+Percorre as diferentes varaiáveis da estrutura das Músicas \mbox{\Hypertarget{menu__music_8c_acd2ed77d07ab0a38a48ff3e12e405a37}\label{menu__music_8c_acd2ed77d07ab0a38a48ff3e12e405a37}} 
+\index{menu\_music.c@{menu\_music.c}!music\_search@{music\_search}}
+\index{music\_search@{music\_search}!menu\_music.c@{menu\_music.c}}
+\subsubsection{\texorpdfstring{music\_search()}{music\_search()}}
+{\footnotesize\ttfamily void music\+\_\+search (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Remete para o Menu de Edição de Músicas. 
+
+Faz a seleção da Música pretendida e remete para o menu de edição 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{menu__music_8c_a60b482a81a97025e2040341d609a3d88}\label{menu__music_8c_a60b482a81a97025e2040341d609a3d88}} 
+\index{menu\_music.c@{menu\_music.c}!music\_file@{music\_file}}
+\index{music\_file@{music\_file}!menu\_music.c@{menu\_music.c}}
+\subsubsection{\texorpdfstring{music\_file}{music\_file}}
+{\footnotesize\ttfamily char music\+\_\+file\mbox{[}$\,$\mbox{]} = \char`\"{}musicas.\+txt\char`\"{}}
+
+
+
+numero de musicas no vector musicas 
+
+\mbox{\Hypertarget{menu__music_8c_a2fc88755839757d7176cb71c37064b39}\label{menu__music_8c_a2fc88755839757d7176cb71c37064b39}} 
+\index{menu\_music.c@{menu\_music.c}!music\_num@{music\_num}}
+\index{music\_num@{music\_num}!menu\_music.c@{menu\_music.c}}
+\subsubsection{\texorpdfstring{music\_num}{music\_num}}
+{\footnotesize\ttfamily int music\+\_\+num = 0}
+

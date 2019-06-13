@@ -1,6 +1,13 @@
 #include "project.h"
 
-void album_search() {           ///procura uma musica por album
+
+/*!
+ * @brief
+ * Procura uma musica por album
+ */
+
+
+void album_search() {
     music_load();
     char pesquisa[50];
 

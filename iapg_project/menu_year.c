@@ -1,6 +1,11 @@
 #include "project.h"
+/*!
+ * @brief
+ * Pesquisa pelo ano da musica
+ */
 
-void year_search() {                ///procura uma musica por Ano
+
+void year_search() {
     music_load();
     char pesquisa[50];
 

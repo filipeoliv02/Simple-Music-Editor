@@ -1,0 +1,151 @@
+\hypertarget{menu__artist_8c}{}\section{menu\+\_\+artist.\+c File Reference}
+\label{menu__artist_8c}\index{menu\_artist.c@{menu\_artist.c}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}project.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{menu__artist_8c_a7c5e73158caf3dee7454843b4bb18325}{menu\+\_\+artist}} ()
+\begin{DoxyCompactList}\small\item\em nome do ficheiro de artistas \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu__artist_8c_a0b753a63f0f576d94160e7d073332c66}{artist\+\_\+print}} (struct \mbox{\hyperlink{structartista}{artista}} $\ast$a)
+\begin{DoxyCompactList}\small\item\em funciona em conjunto com outra funcao para imprimir os artistas \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu__artist_8c_a30a0e556624bca6a1523351a151cf84c}{artist\+\_\+input}} (char $\ast$temp)
+\item 
+void \mbox{\hyperlink{menu__artist_8c_aa0cc094bdfe1f29db5fe4c4405b2ddde}{artist\+\_\+add}} (struct \mbox{\hyperlink{structartista}{artista}} $\ast$a)
+\begin{DoxyCompactList}\small\item\em adiciona artistas \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu__artist_8c_abc42f3a57f943f92d23752d9650031f9}{artist\+\_\+remove}} (struct \mbox{\hyperlink{structartista}{artista}} $\ast$a)
+\begin{DoxyCompactList}\small\item\em remove o artista selecionado \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu__artist_8c_ab41a14f04e6032035587c9c22e60271a}{artist\+\_\+edit}} (struct \mbox{\hyperlink{structartista}{artista}} $\ast$a)
+\item 
+void \mbox{\hyperlink{menu__artist_8c_a8f711ef177fff9555d0d9b7dbd02fe0e}{artist\+\_\+list}} ()
+\begin{DoxyCompactList}\small\item\em lista todos os artistas \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu__artist_8c_ac92e93ea1e283f63cd157c3de3bda0d2}{artist\+\_\+load}} ()
+\begin{DoxyCompactList}\small\item\em carrega o ficheiro artistas.\+txt \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu__artist_8c_a8defa4fde9758146417715dd117615d2}{artist\+\_\+save}} ()
+\begin{DoxyCompactList}\small\item\em grava alteracoes feitas pelo utilizador no ficheiro artistas \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu__artist_8c_ac92bcae8044b83bc1a51fa19509f1979}{artist\+\_\+search}} ()
+\begin{DoxyCompactList}\small\item\em encontra e remete para o menu de edicao de artistas \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{menu__artist_8c_a8d82d06e41678bc11a48e87a03a015c4}{artist\+\_\+num}} = 0
+\item 
+char \mbox{\hyperlink{menu__artist_8c_ae03497d4c5787584c1e6cf070ecf983a}{artist\+\_\+file}} \mbox{[}$\,$\mbox{]} = \char`\"{}artistas.\+txt\char`\"{}
+\begin{DoxyCompactList}\small\item\em numero de artistas no vector \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{menu__artist_8c_aa0cc094bdfe1f29db5fe4c4405b2ddde}\label{menu__artist_8c_aa0cc094bdfe1f29db5fe4c4405b2ddde}} 
+\index{menu\_artist.c@{menu\_artist.c}!artist\_add@{artist\_add}}
+\index{artist\_add@{artist\_add}!menu\_artist.c@{menu\_artist.c}}
+\subsubsection{\texorpdfstring{artist\_add()}{artist\_add()}}
+{\footnotesize\ttfamily void artist\+\_\+add (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structartista}{artista}} $\ast$}]{a }\end{DoxyParamCaption})}
+
+
+
+adiciona artistas 
+
+\mbox{\Hypertarget{menu__artist_8c_ab41a14f04e6032035587c9c22e60271a}\label{menu__artist_8c_ab41a14f04e6032035587c9c22e60271a}} 
+\index{menu\_artist.c@{menu\_artist.c}!artist\_edit@{artist\_edit}}
+\index{artist\_edit@{artist\_edit}!menu\_artist.c@{menu\_artist.c}}
+\subsubsection{\texorpdfstring{artist\_edit()}{artist\_edit()}}
+{\footnotesize\ttfamily void artist\+\_\+edit (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structartista}{artista}} $\ast$}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{menu__artist_8c_a30a0e556624bca6a1523351a151cf84c}\label{menu__artist_8c_a30a0e556624bca6a1523351a151cf84c}} 
+\index{menu\_artist.c@{menu\_artist.c}!artist\_input@{artist\_input}}
+\index{artist\_input@{artist\_input}!menu\_artist.c@{menu\_artist.c}}
+\subsubsection{\texorpdfstring{artist\_input()}{artist\_input()}}
+{\footnotesize\ttfamily void artist\+\_\+input (\begin{DoxyParamCaption}\item[{char $\ast$}]{temp }\end{DoxyParamCaption})}
+
+esta funcao deve ler uma string escrita pelo utilizador no terminal, e guarda-\/la em temp \mbox{\Hypertarget{menu__artist_8c_a8f711ef177fff9555d0d9b7dbd02fe0e}\label{menu__artist_8c_a8f711ef177fff9555d0d9b7dbd02fe0e}} 
+\index{menu\_artist.c@{menu\_artist.c}!artist\_list@{artist\_list}}
+\index{artist\_list@{artist\_list}!menu\_artist.c@{menu\_artist.c}}
+\subsubsection{\texorpdfstring{artist\_list()}{artist\_list()}}
+{\footnotesize\ttfamily void artist\+\_\+list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+lista todos os artistas 
+
+\mbox{\Hypertarget{menu__artist_8c_ac92e93ea1e283f63cd157c3de3bda0d2}\label{menu__artist_8c_ac92e93ea1e283f63cd157c3de3bda0d2}} 
+\index{menu\_artist.c@{menu\_artist.c}!artist\_load@{artist\_load}}
+\index{artist\_load@{artist\_load}!menu\_artist.c@{menu\_artist.c}}
+\subsubsection{\texorpdfstring{artist\_load()}{artist\_load()}}
+{\footnotesize\ttfamily void artist\+\_\+load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+carrega o ficheiro artistas.\+txt 
+
+\mbox{\Hypertarget{menu__artist_8c_a0b753a63f0f576d94160e7d073332c66}\label{menu__artist_8c_a0b753a63f0f576d94160e7d073332c66}} 
+\index{menu\_artist.c@{menu\_artist.c}!artist\_print@{artist\_print}}
+\index{artist\_print@{artist\_print}!menu\_artist.c@{menu\_artist.c}}
+\subsubsection{\texorpdfstring{artist\_print()}{artist\_print()}}
+{\footnotesize\ttfamily void artist\+\_\+print (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structartista}{artista}} $\ast$}]{a }\end{DoxyParamCaption})}
+
+
+
+funciona em conjunto com outra funcao para imprimir os artistas 
+
+\mbox{\Hypertarget{menu__artist_8c_abc42f3a57f943f92d23752d9650031f9}\label{menu__artist_8c_abc42f3a57f943f92d23752d9650031f9}} 
+\index{menu\_artist.c@{menu\_artist.c}!artist\_remove@{artist\_remove}}
+\index{artist\_remove@{artist\_remove}!menu\_artist.c@{menu\_artist.c}}
+\subsubsection{\texorpdfstring{artist\_remove()}{artist\_remove()}}
+{\footnotesize\ttfamily void artist\+\_\+remove (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structartista}{artista}} $\ast$}]{a }\end{DoxyParamCaption})}
+
+
+
+remove o artista selecionado 
+
+\mbox{\Hypertarget{menu__artist_8c_a8defa4fde9758146417715dd117615d2}\label{menu__artist_8c_a8defa4fde9758146417715dd117615d2}} 
+\index{menu\_artist.c@{menu\_artist.c}!artist\_save@{artist\_save}}
+\index{artist\_save@{artist\_save}!menu\_artist.c@{menu\_artist.c}}
+\subsubsection{\texorpdfstring{artist\_save()}{artist\_save()}}
+{\footnotesize\ttfamily void artist\+\_\+save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+grava alteracoes feitas pelo utilizador no ficheiro artistas 
+
+\mbox{\Hypertarget{menu__artist_8c_ac92bcae8044b83bc1a51fa19509f1979}\label{menu__artist_8c_ac92bcae8044b83bc1a51fa19509f1979}} 
+\index{menu\_artist.c@{menu\_artist.c}!artist\_search@{artist\_search}}
+\index{artist\_search@{artist\_search}!menu\_artist.c@{menu\_artist.c}}
+\subsubsection{\texorpdfstring{artist\_search()}{artist\_search()}}
+{\footnotesize\ttfamily void artist\+\_\+search (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+encontra e remete para o menu de edicao de artistas 
+
+\mbox{\Hypertarget{menu__artist_8c_a7c5e73158caf3dee7454843b4bb18325}\label{menu__artist_8c_a7c5e73158caf3dee7454843b4bb18325}} 
+\index{menu\_artist.c@{menu\_artist.c}!menu\_artist@{menu\_artist}}
+\index{menu\_artist@{menu\_artist}!menu\_artist.c@{menu\_artist.c}}
+\subsubsection{\texorpdfstring{menu\_artist()}{menu\_artist()}}
+{\footnotesize\ttfamily int menu\+\_\+artist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+nome do ficheiro de artistas 
+
+M\+E\+N\+U\+\_\+\+A\+R\+T\+I\+ST.
+
+abre o menu de opcoes dos artistas 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{menu__artist_8c_ae03497d4c5787584c1e6cf070ecf983a}\label{menu__artist_8c_ae03497d4c5787584c1e6cf070ecf983a}} 
+\index{menu\_artist.c@{menu\_artist.c}!artist\_file@{artist\_file}}
+\index{artist\_file@{artist\_file}!menu\_artist.c@{menu\_artist.c}}
+\subsubsection{\texorpdfstring{artist\_file}{artist\_file}}
+{\footnotesize\ttfamily char artist\+\_\+file\mbox{[}$\,$\mbox{]} = \char`\"{}artistas.\+txt\char`\"{}}
+
+
+
+numero de artistas no vector 
+
+\mbox{\Hypertarget{menu__artist_8c_a8d82d06e41678bc11a48e87a03a015c4}\label{menu__artist_8c_a8d82d06e41678bc11a48e87a03a015c4}} 
+\index{menu\_artist.c@{menu\_artist.c}!artist\_num@{artist\_num}}
+\index{artist\_num@{artist\_num}!menu\_artist.c@{menu\_artist.c}}
+\subsubsection{\texorpdfstring{artist\_num}{artist\_num}}
+{\footnotesize\ttfamily int artist\+\_\+num = 0}
+

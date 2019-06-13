@@ -1,7 +1,13 @@
 #include "project.h"
 
+/*!
+ *
+ * @brief
+ * Menu de Edicao de musicas
+ *
+ */
 
-int menu_edit_remove_music(struct musica *m) {              ///Menu de Edicao de musicas
+int menu_edit_remove_music(struct musica *m) {
 
     char op;
     do {
@@ -15,16 +21,16 @@ int menu_edit_remove_music(struct musica *m) {              ///Menu de Edicao de
         switch (op) {
             case '1':
 
-                music_print(m);                 ///lista o nome da musica
+                music_print(m);
 
-                lrc_print();                    ///lista as letras da musica
+                lrc_print();
                 break;
             case '2':
-                music_edit(m);                  ///edita a musica
+                music_edit(m);
                 music_save();
                 break;
             case '3':
-                music_remove(m);                ///remove a musica
+                music_remove(m);
                 music_save();
                 break;
             case 's':
@@ -42,7 +48,16 @@ int menu_edit_remove_music(struct musica *m) {              ///Menu de Edicao de
     return 0;
 }
 
-int menu_edit_remove_artist(struct artista *a) {            ///Menu de Edicao de artistas
+
+/*!
+ *
+ * @brief
+ * Menu de Edição de Artistas
+ *
+ */
+
+
+int menu_edit_remove_artist(struct artista *a) {
     char op;
     do {
         artist_print(a);
@@ -54,11 +69,11 @@ int menu_edit_remove_artist(struct artista *a) {            ///Menu de Edicao de
         scanf("%c", &op);
         switch (op) {
             case '1':
-                artist_edit(a);         ///edita o nome do artista
+                artist_edit(a);
                 artist_save();
                 break;
             case '2':
-                artist_remove(a);           ///remove o artista
+                artist_remove(a);
                 artist_save();
                 break;
             case 's':
@@ -76,8 +91,12 @@ int menu_edit_remove_artist(struct artista *a) {            ///Menu de Edicao de
     return 0;
 }
 
-
-void lrc_print(struct musica *m) {                  ///imprime as letras
+/*!
+ *
+ * @brief
+ * lista as letras da musica
+ */
+void lrc_print(struct musica *m) {
     printf("\n \n");
     for(int i=0;i < m->num_letras; i++){
         printf("%s \n", m->letras[i].texto);

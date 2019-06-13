@@ -1,6 +1,14 @@
 #include "project.h"
 
-    int menu_pr() {             ///Menu Principal
+/*!
+ *
+ * @brief
+ * Menu principal
+ * @details
+ * Menu Principal com a possibilidade de escolha de um dos seus sub-menus
+ */
+
+    int menu_pr() {
     char opcao;
     do {
         printf("Escolha uma opcao entre as possiveis: \n");
@@ -14,21 +22,21 @@
         switch (opcao) {
             case '1':
                 printf("\n Todas as Informacoes \n");
-                music_load();                 ///carrega o ficheiro musicas.txt
-                lista_todas_musicas();        ///Lista as informacoes contidas em musicas.txt ordenando-as numericamente
+                music_load();
+                lista_todas_musicas();
                 break;
             case '2':
                 printf("\n Musicas \n");
-                music_load();                 ///carrega o ficheiro musicas.txt
-                menu_music();                 ///abre o menu de opcoes das musicas
+                music_load();
+                menu_music();
                 break;
             case '3':
                 printf("\n Artistas\n");
-                artist_load();                ///carrega o ficheiro artistas.txt
-                menu_artist();                ///abre o menu de opcoes dos artistas
+                artist_load();
+                menu_artist();
                 break;
             case '4':
-                menu_search();                ///abre o menu de pesquisa
+                menu_search();
                 break;
             case 's':
             case 'S':
@@ -46,15 +54,28 @@
 }
 
 
+/*!
+ *
+ * @brief
+ * imprime a musica contida na estrutura - artista + titulo
+ */
 
-
-void imprime_musica (struct musica *m) {                        ///imprime a musica contida na estrutura - artista + titulo
+void imprime_musica (struct musica *m) {
 
         printf("%s - %s \n", m->artista, m->titulo);
 }
 
 
-void lista_todas_musicas() {                            ///lista a informacao contida para todas as musicas no ficheiro musicas.txt
+
+/*!
+ * @brief
+ * lista a informacao contida para todas as musicas no ficheiro musicas.txt
+ * @details
+ * Lista as informacoes contidas em musicas.txt ordenando-as numericamente
+ */
+
+
+void lista_todas_musicas() {
     for (int i = 0; i < music_num; i++) {
         printf("[%d] ",i+1);
         imprime_musica(&vec_musicas[i]);
